@@ -37,7 +37,7 @@ namespace Library_management
             con.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter adapt;
-            adapt = new SqlDataAdapter("select * from User_details where UserName='" + txtUsername.Text + "'", con);
+            adapt = new SqlDataAdapter("select * from credentials where UserName='" + txtUsername.Text + "'", con);
             adapt.Fill(dt);
             if (dt.Rows.Count != 0)
             {
@@ -53,7 +53,7 @@ namespace Library_management
             }
             else
             {
-                cmd = new SqlCommand("insert into User_details values(@username,@password,@staff)", con);
+                cmd = new SqlCommand("insert into credentials values(@username,@password,@staff)", con);
                 cmd.Parameters.AddWithValue("username", txtUsername.Text);
                 cmd.Parameters.AddWithValue("password", txtPassword.Text);
                 cmd.Parameters.AddWithValue("staff", btnStaff.Checked);
