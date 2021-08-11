@@ -47,15 +47,15 @@ namespace Library_management
                 con.Open();
                 DataTable dt = new DataTable();
                 SqlDataAdapter adapt;
-                adapt = new SqlDataAdapter("select * from User_details where UserName='" + txtUsername.Text + "' and Password='" + txtPassword.Text + "'", con);
+                adapt = new SqlDataAdapter("select * from credentials where username='" + txtUsername.Text + "' and password='" + txtPassword.Text + "'", con);
                 adapt.Fill(dt);
                 
                 if (dt.Rows.Count != 0)
                 {
-                    MessageBox.Show("Welcome " + (string)dt.Rows[0]["UserName"]);
+                    MessageBox.Show("Welcome " + (string)dt.Rows[0]["username"]);
                     con.Close();
                     this.Hide();
-                    Home home = new Home(Convert.ToBoolean(dt.Rows[0]["Staff"]));
+                    Home home = new Home(Convert.ToBoolean(dt.Rows[0]["staff"]),Convert.ToInt32(dt.Rows[0]["id"]));
                     home.ShowDialog();
                 }
                 else

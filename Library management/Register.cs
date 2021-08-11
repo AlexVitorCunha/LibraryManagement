@@ -37,7 +37,7 @@ namespace Library_management
             con.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter adapt;
-            adapt = new SqlDataAdapter("select * from credentials where UserName='" + txtUsername.Text + "'", con);
+            adapt = new SqlDataAdapter("select * from credentials where username='" + txtUsername.Text + "'", con);
             adapt.Fill(dt);
             if (dt.Rows.Count != 0)
             {

@@ -31,11 +31,12 @@ namespace Library_management
         {
             this.btnLogout = new System.Windows.Forms.Button();
             this.bookList = new System.Windows.Forms.DataGridView();
-            this.txtISBN = new System.Windows.Forms.TextBox();
-            this.ISBN = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.clear = new System.Windows.Forms.Button();
             this.btnAddBook = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.searchType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bookList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,22 +59,24 @@ namespace Library_management
             this.bookList.RowTemplate.Height = 28;
             this.bookList.Size = new System.Drawing.Size(722, 226);
             this.bookList.TabIndex = 1;
+            this.bookList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookList_CellContenDoubleClick);
+            this.bookList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookList_CellContenDoubleClick);
             // 
-            // txtISBN
+            // txtSearch
             // 
-            this.txtISBN.Location = new System.Drawing.Point(109, 83);
-            this.txtISBN.Name = "txtISBN";
-            this.txtISBN.Size = new System.Drawing.Size(100, 26);
-            this.txtISBN.TabIndex = 2;
+            this.txtSearch.Location = new System.Drawing.Point(179, 86);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 26);
+            this.txtSearch.TabIndex = 2;
             // 
-            // ISBN
+            // lblSearch
             // 
-            this.ISBN.AutoSize = true;
-            this.ISBN.Location = new System.Drawing.Point(40, 86);
-            this.ISBN.Name = "ISBN";
-            this.ISBN.Size = new System.Drawing.Size(47, 20);
-            this.ISBN.TabIndex = 3;
-            this.ISBN.Text = "ISBN";
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(57, 92);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(60, 20);
+            this.lblSearch.TabIndex = 3;
+            this.lblSearch.Text = "Search";
             // 
             // clear
             // 
@@ -94,26 +97,42 @@ namespace Library_management
             this.btnAddBook.UseVisualStyleBackColor = true;
             this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.Location = new System.Drawing.Point(44, 158);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 29);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSearch.Location = new System.Drawing.Point(623, 83);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(93, 29);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // searchType
+            // 
+            this.searchType.FormattingEnabled = true;
+            this.searchType.IntegralHeight = false;
+            this.searchType.Items.AddRange(new object[] {
+            "ISBN",
+            "Book Title",
+            "Author",
+            "Genre",
+            "Year"});
+            this.searchType.Location = new System.Drawing.Point(406, 83);
+            this.searchType.Name = "searchType";
+            this.searchType.Size = new System.Drawing.Size(172, 28);
+            this.searchType.TabIndex = 7;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.searchType);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnAddBook);
             this.Controls.Add(this.clear);
-            this.Controls.Add(this.ISBN);
-            this.Controls.Add(this.txtISBN);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.bookList);
             this.Controls.Add(this.btnLogout);
             this.Name = "Home";
@@ -129,10 +148,11 @@ namespace Library_management
 
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.DataGridView bookList;
-        private System.Windows.Forms.TextBox txtISBN;
-        private System.Windows.Forms.Label ISBN;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.Button btnAddBook;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ComboBox searchType;
     }
 }
