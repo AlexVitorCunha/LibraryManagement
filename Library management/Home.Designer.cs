@@ -126,7 +126,7 @@ namespace Library_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 471);
             this.Controls.Add(this.searchType);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnAddBook);

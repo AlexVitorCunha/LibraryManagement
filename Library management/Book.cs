@@ -58,8 +58,6 @@ namespace Library_management
                 btnUpdate.Hide();
                 btnDelete.Hide();
             }
-            
-
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -74,21 +72,23 @@ namespace Library_management
         {
             if (txtISBN.Text != "")
             {
-                /*
-                cmd = new SqlCommand("UPDATE Emp_details SET EmpName=@EmpName, EmpAge=@EmpAge, " +
-                    "EmpContact=@EmpContact, EmpGender=@EmpGender where EmpId=@EmpId", con);
+                
+                cmd = new SqlCommand("UPDATE books SET isbn=@isbn, book_name=@book_name, " +
+                    "author_name=@author_name, genre=@genre, year=@year, quantity=@quantity  where isbn=@Oldisbn", con);
                 con.Open();
-                cmd.Parameters.AddWithValue("@EmpId", Eid);
-                cmd.Parameters.AddWithValue("@EmpName", txt_Name.Text);
-                cmd.Parameters.AddWithValue("@EmpAge", txt_Age.Text);
-                cmd.Parameters.AddWithValue("@EmpContact", txt_Contact.Text);
-                cmd.Parameters.AddWithValue("@EmpGender", txt_Gender.Text);
+                cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
+                cmd.Parameters.AddWithValue("@book_name", txtName.Text);
+                cmd.Parameters.AddWithValue("@author_name", txtAuthor.Text);
+                cmd.Parameters.AddWithValue("@genre", txtGenre.Text);
+                cmd.Parameters.AddWithValue("@year", txtYear.Text);
+                cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
+                cmd.Parameters.AddWithValue("@Oldisbn", book_id);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Record Updated Successfully");
-                PopulateData();
-                ClearControls();
-                */
+                this.Hide();
+                Home home = new Home(staff, user_id);
+                home.ShowDialog();
             }
             else
             {
@@ -104,13 +104,15 @@ namespace Library_management
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
-                cmd = new SqlCommand("delete from Emp_details WHERE EmpId=@EmpId", con);
+                cmd = new SqlCommand("delete from books WHERE isbn=@isbn", con);
                 con.Open();
-                //cmd.Parameters.AddWithValue("@EmpId", Eid);
+                cmd.Parameters.AddWithValue("@isbn", book_id);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Deleted Successfully");
-               
+                this.Hide();
+                Home home = new Home(staff, user_id);
+                home.ShowDialog();
             }
         }
 
