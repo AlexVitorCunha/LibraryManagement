@@ -58,25 +58,35 @@ namespace Library_management
             book.ShowDialog();
         }
 
+        //Search in the database
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String keyword = (string)searchType.SelectedItem;
-            String whereClause;
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter adapt;
             switch (keyword)
             {
                 case "ISBN":
-                    whereClause = "isbn=" + txtSearch.Text;
+                    adapt = new SqlDataAdapter($"select * from books where isbn=" + txtSearch.Text, con);
                     break;
                 case "Book Title":
+                    adapt = new SqlDataAdapter($"select * from books where book_name like '%" + txtSearch.Text + "%'", con);
                     break;
                 case "Author":
+                    adapt = new SqlDataAdapter($"select * from books where author_name like '%" + txtSearch.Text + "%'", con);
                     break;
                 case "Genre":
+                    adapt = new SqlDataAdapter($"select * from books where genre like '%" + txtSearch.Text + "%'", con);
                     break;
-                case "Year":
+                default:
+                    adapt = new SqlDataAdapter($"select * from books where year=" + txtSearch.Text, con);
                     break;
             }
-            MessageBox.Show(keyword);
+            adapt.Fill(dt);
+            bookList.DataSource = dt;
+            con.Close();
+
         }
 
         private void bookList_CellContenDoubleClick(object sender, DataGridViewCellEventArgs e)

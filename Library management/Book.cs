@@ -144,7 +144,23 @@ namespace Library_management
             }
             else
             {
-
+                cmd = new SqlCommand("insert into books_borrowed(return_date, isbn, id)" +
+                    " values(@return_date, @isbn, @id)", con);
+                con.Open();
+                DateTime return_date = DateTime.Today.AddDays(7);
+                cmd.Parameters.AddWithValue("@return_date", return_date);
+                cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
+                cmd.Parameters.AddWithValue("@id", user_id);
+                cmd.ExecuteNonQuery();
+                cmd = new SqlCommand("UPDATE books SET quantity=@quantity where isbn=@isbn", con);
+                cmd.Parameters.AddWithValue("@quantity", int.Parse(txtQuantity.Text) - 1);
+                cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
+     
+                con.Close();
+                MessageBox.Show("You show return this book by" + return_date);
+                this.Hide();
+                Home home = new Home(staff, user_id);
+                home.ShowDialog();
             }
         }
     }
