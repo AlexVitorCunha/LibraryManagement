@@ -59,6 +59,7 @@ namespace Library_management
             this.bookCover.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bookCover.Name = "bookCover";
             this.bookCover.Size = new System.Drawing.Size(187, 222);
+            this.bookCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bookCover.TabIndex = 1;
             this.bookCover.TabStop = false;
             // 
@@ -77,6 +78,7 @@ namespace Library_management
             // btnReturn
             // 
             this.btnReturn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Location = new System.Drawing.Point(8, 8);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReturn.Name = "btnReturn";
@@ -89,6 +91,7 @@ namespace Library_management
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.LightGreen;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Location = new System.Drawing.Point(143, 263);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdate.Name = "btnUpdate";
@@ -101,6 +104,7 @@ namespace Library_management
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Orange;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Location = new System.Drawing.Point(238, 263);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
@@ -117,6 +121,7 @@ namespace Library_management
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Location = new System.Drawing.Point(26, 263);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
@@ -255,6 +260,7 @@ namespace Library_management
             // btnBorrow
             // 
             this.btnBorrow.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrow.Location = new System.Drawing.Point(23, 305);
             this.btnBorrow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBorrow.Name = "btnBorrow";
@@ -292,6 +298,7 @@ namespace Library_management
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Book";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Book";
             ((System.ComponentModel.ISupportInitialize)(this.bookCover)).EndInit();
             this.ResumeLayout(false);
