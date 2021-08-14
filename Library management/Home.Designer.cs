@@ -42,9 +42,10 @@ namespace Library_management
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(677, 13);
+            this.btnLogout.Location = new System.Drawing.Point(451, 8);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(100, 39);
+            this.btnLogout.Size = new System.Drawing.Size(67, 25);
             this.btnLogout.TabIndex = 0;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -53,45 +54,51 @@ namespace Library_management
             // bookList
             // 
             this.bookList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bookList.Location = new System.Drawing.Point(40, 193);
+            this.bookList.Location = new System.Drawing.Point(27, 125);
+            this.bookList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bookList.Name = "bookList";
             this.bookList.RowHeadersWidth = 62;
             this.bookList.RowTemplate.Height = 28;
-            this.bookList.Size = new System.Drawing.Size(722, 226);
+            this.bookList.Size = new System.Drawing.Size(481, 147);
             this.bookList.TabIndex = 1;
             this.bookList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookList_CellContenDoubleClick);
             this.bookList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookList_CellContenDoubleClick);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(179, 86);
+            this.txtSearch.Location = new System.Drawing.Point(119, 56);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(100, 26);
+            this.txtSearch.Size = new System.Drawing.Size(68, 20);
             this.txtSearch.TabIndex = 2;
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(57, 92);
+            this.lblSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSearch.Location = new System.Drawing.Point(38, 60);
+            this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(60, 20);
+            this.lblSearch.Size = new System.Drawing.Size(41, 13);
             this.lblSearch.TabIndex = 3;
             this.lblSearch.Text = "Search";
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(687, 158);
+            this.clear.Location = new System.Drawing.Point(458, 103);
+            this.clear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(75, 29);
+            this.clear.Size = new System.Drawing.Size(50, 19);
             this.clear.TabIndex = 4;
             this.clear.Text = "Clear";
             this.clear.UseVisualStyleBackColor = true;
             // 
             // btnAddBook
             // 
-            this.btnAddBook.Location = new System.Drawing.Point(520, 158);
+            this.btnAddBook.Location = new System.Drawing.Point(347, 103);
+            this.btnAddBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.Size = new System.Drawing.Size(114, 29);
+            this.btnAddBook.Size = new System.Drawing.Size(76, 19);
             this.btnAddBook.TabIndex = 5;
             this.btnAddBook.Text = "Add book";
             this.btnAddBook.UseVisualStyleBackColor = true;
@@ -99,9 +106,10 @@ namespace Library_management
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(623, 83);
+            this.btnSearch.Location = new System.Drawing.Point(415, 54);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(93, 29);
+            this.btnSearch.Size = new System.Drawing.Size(62, 19);
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -117,16 +125,18 @@ namespace Library_management
             "Author",
             "Genre",
             "Year"});
-            this.searchType.Location = new System.Drawing.Point(406, 83);
+            this.searchType.Location = new System.Drawing.Point(271, 54);
+            this.searchType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchType.Name = "searchType";
-            this.searchType.Size = new System.Drawing.Size(172, 28);
+            this.searchType.Size = new System.Drawing.Size(116, 21);
             this.searchType.TabIndex = 7;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 471);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.ClientSize = new System.Drawing.Size(533, 306);
             this.Controls.Add(this.searchType);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnAddBook);
@@ -135,6 +145,7 @@ namespace Library_management
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.bookList);
             this.Controls.Add(this.btnLogout);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Home";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);

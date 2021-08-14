@@ -243,7 +243,7 @@ namespace Library_management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 355);
+            this.ClientSize = new System.Drawing.Size(688, 397);
             this.Controls.Add(this.btnBorrow);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.Quantity);
