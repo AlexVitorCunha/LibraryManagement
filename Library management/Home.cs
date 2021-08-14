@@ -85,7 +85,7 @@ namespace Library_management
                         adapt = new SqlDataAdapter($"select * from books where genre like '%" + txtSearch.Text + "%'", con);
                         break;
                     case "Year":
-                        adapt = new SqlDataAdapter($"select * from books where year=" + txtSearch.Text, con);
+                        adapt = new SqlDataAdapter($"select * from books where =" + txtSearch.Text, con);
                         break;
                     default:
                         adapt = new SqlDataAdapter($"select * from books where book_name like '%" + txtSearch.Text + "%'", con);
@@ -119,6 +119,16 @@ namespace Library_management
         }
 
         private void btnImport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnImport_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bookList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
