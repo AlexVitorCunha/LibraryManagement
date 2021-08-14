@@ -21,6 +21,7 @@ namespace Library_management
             InitializeComponent();
             this.staff = staff;
             this.user_id = user_id;
+            searchType.SelectedItem = "Book Title";
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -65,28 +66,45 @@ namespace Library_management
             con.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter adapt;
-            switch (keyword)
-            {
-                case "ISBN":
-                    adapt = new SqlDataAdapter($"select * from books where isbn=" + txtSearch.Text, con);
-                    break;
-                case "Book Title":
-                    adapt = new SqlDataAdapter($"select * from books where book_name like '%" + txtSearch.Text + "%'", con);
-                    break;
-                case "Author":
-                    adapt = new SqlDataAdapter($"select * from books where author_name like '%" + txtSearch.Text + "%'", con);
-                    break;
-                case "Genre":
-                    adapt = new SqlDataAdapter($"select * from books where genre like '%" + txtSearch.Text + "%'", con);
-                    break;
-                default:
-                    adapt = new SqlDataAdapter($"select * from books where year=" + txtSearch.Text, con);
-                    break;
+            if (txtSearch.Text == "") {
+                MessageBox.Show("Please enter what you like to search.");
             }
-            adapt.Fill(dt);
-            bookList.DataSource = dt;
-            con.Close();
-
+            else {
+                switch (keyword)
+                {
+                    case "ISBN":
+                        adapt = new SqlDataAdapter($"select * from books where isbn=" + txtSearch.Text, con);
+                        break;
+                    case "Book Title":
+                        adapt = new SqlDataAdapter($"select * from books where book_name like '%" + txtSearch.Text + "%'", con);
+                        break;
+                    case "Author":
+                        adapt = new SqlDataAdapter($"select * from books where author_name like '%" + txtSearch.Text + "%'", con);
+                        break;
+                    case "Genre":
+                        adapt = new SqlDataAdapter($"select * from books where genre like '%" + txtSearch.Text + "%'", con);
+                        break;
+                    case "Year":
+                        adapt = new SqlDataAdapter($"select * from books where year=" + txtSearch.Text, con);
+                        break;
+                    default:
+                        adapt = new SqlDataAdapter($"select * from books where book_name like '%" + txtSearch.Text + "%'", con);
+                        break;
+                }
+                try
+                {
+                    adapt.Fill(dt);
+                    bookList.DataSource = dt;
+                    con.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Invalid Search");
+                    con.Close();
+                    PopulateData();
+                }
+            }
+            
         }
 
         private void bookList_CellContenDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -98,6 +116,11 @@ namespace Library_management
                 Book book = new Book(staff, user_id, row);
                 book.ShowDialog();
             }
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -45,3 +45,19 @@ E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\De
 E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Debug\LibraryManagement.csproj.CopyComplete
 E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Debug\Library management.exe
 E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Debug\Library management.pdb
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\bin\Debug\Library management.exe.config
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\bin\Debug\Library management.exe
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\bin\Debug\Library management.pdb
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\bin\Debug\System.Data.SqlClient.dll
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\bin\Debug\System.Data.SqlClient.xml
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\LibraryManagement.csproj.AssemblyReference.cache
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Library_management.Book.resources
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Library_management.Home.resources
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Library_management.Login.resources
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Library_management.Properties.Resources.resources
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Library_management.Register.resources
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\LibraryManagement.csproj.GenerateResource.cache
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\LibraryManagement.csproj.CoreCompileInputs.cache
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\LibraryManagement.csproj.CopyComplete
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Library management.exe
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Library management.pdb
