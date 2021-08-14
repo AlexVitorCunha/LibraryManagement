@@ -100,7 +100,7 @@ namespace Library_management
             // btnAccount
             // 
             this.btnAccount.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnAccount.Location = new System.Drawing.Point(198, 267);
+            this.btnAccount.Location = new System.Drawing.Point(195, 269);
             this.btnAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(103, 23);
@@ -149,7 +149,7 @@ namespace Library_management
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.ClientSize = new System.Drawing.Size(498, 301);
+            this.ClientSize = new System.Drawing.Size(498, 355);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnVisible);
