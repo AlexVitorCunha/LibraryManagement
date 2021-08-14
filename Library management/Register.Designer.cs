@@ -81,6 +81,7 @@ namespace Library_management
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.Location = new System.Drawing.Point(219, 271);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
@@ -94,6 +95,7 @@ namespace Library_management
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(278, 368);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
@@ -212,6 +214,7 @@ namespace Library_management
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Register";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Register_Load);
             this.ResumeLayout(false);

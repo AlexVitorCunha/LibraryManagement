@@ -48,6 +48,7 @@ namespace Library_management
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnLogout.Location = new System.Drawing.Point(712, 9);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -97,6 +98,7 @@ namespace Library_management
             // clear
             // 
             this.clear.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clear.Location = new System.Drawing.Point(597, 144);
             this.clear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.clear.Name = "clear";
@@ -108,6 +110,7 @@ namespace Library_management
             // btnAddBook
             // 
             this.btnAddBook.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAddBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBook.Location = new System.Drawing.Point(695, 144);
             this.btnAddBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddBook.Name = "btnAddBook";
@@ -120,6 +123,7 @@ namespace Library_management
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Location = new System.Drawing.Point(502, 144);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
@@ -159,6 +163,7 @@ namespace Library_management
             // btnImport
             // 
             this.btnImport.BackColor = System.Drawing.Color.SlateGray;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnImport.Location = new System.Drawing.Point(23, 408);
             this.btnImport.Name = "btnImport";
@@ -170,6 +175,7 @@ namespace Library_management
             // btnExport
             // 
             this.btnExport.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnExport.Location = new System.Drawing.Point(558, 406);
             this.btnExport.Name = "btnExport";
@@ -222,6 +228,7 @@ namespace Library_management
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bookList)).EndInit();
