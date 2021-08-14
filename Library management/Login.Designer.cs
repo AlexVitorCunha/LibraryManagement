@@ -93,7 +93,7 @@ namespace Library_management
             this.btnLogin.Location = new System.Drawing.Point(150, 225);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(200, 22);
+            this.btnLogin.Size = new System.Drawing.Size(200, 28);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
