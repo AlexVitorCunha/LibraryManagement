@@ -48,10 +48,10 @@ namespace Library_management
             this.txtUsername.BackColor = System.Drawing.Color.LightBlue;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(174, 85);
+            this.txtUsername.Location = new System.Drawing.Point(159, 85);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(276, 28);
+            this.txtUsername.Size = new System.Drawing.Size(235, 28);
             this.txtUsername.TabIndex = 0;
             // 
             // txtPassword
@@ -59,11 +59,11 @@ namespace Library_management
             this.txtPassword.BackColor = System.Drawing.Color.LightBlue;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(174, 130);
+            this.txtPassword.Location = new System.Drawing.Point(159, 130);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(276, 28);
+            this.txtPassword.Size = new System.Drawing.Size(235, 28);
             this.txtPassword.TabIndex = 1;
             // 
             // txtConfirmPassword
@@ -71,11 +71,11 @@ namespace Library_management
             this.txtConfirmPassword.BackColor = System.Drawing.Color.LightBlue;
             this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(174, 174);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(159, 174);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(276, 28);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(235, 28);
             this.txtConfirmPassword.TabIndex = 2;
             // 
             // btnRegister
@@ -83,7 +83,7 @@ namespace Library_management
             this.btnRegister.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(190, 237);
+            this.btnRegister.Location = new System.Drawing.Point(159, 236);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(198, 36);
@@ -96,11 +96,11 @@ namespace Library_management
             // 
             this.btnLogin.BackColor = System.Drawing.Color.LimeGreen;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(216, 308);
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(194, 310);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(147, 36);
+            this.btnLogin.Size = new System.Drawing.Size(124, 38);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login Now";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -111,7 +111,7 @@ namespace Library_management
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label1.Location = new System.Drawing.Point(43, 91);
+            this.label1.Location = new System.Drawing.Point(26, 85);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 29);
@@ -123,7 +123,7 @@ namespace Library_management
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label2.Location = new System.Drawing.Point(47, 136);
+            this.label2.Location = new System.Drawing.Point(30, 136);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 29);
@@ -136,7 +136,7 @@ namespace Library_management
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label3.Location = new System.Drawing.Point(26, 180);
+            this.label3.Location = new System.Drawing.Point(11, 180);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 29);
@@ -148,7 +148,7 @@ namespace Library_management
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label4.Location = new System.Drawing.Point(194, 283);
+            this.label4.Location = new System.Drawing.Point(168, 288);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(176, 18);
@@ -160,7 +160,7 @@ namespace Library_management
             this.btnStaff.AutoSize = true;
             this.btnStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnStaff.Location = new System.Drawing.Point(188, 207);
+            this.btnStaff.Location = new System.Drawing.Point(159, 208);
             this.btnStaff.Margin = new System.Windows.Forms.Padding(2);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(62, 24);
@@ -175,7 +175,7 @@ namespace Library_management
             this.lblError.BackColor = System.Drawing.Color.Transparent;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(370, 207);
+            this.lblError.Location = new System.Drawing.Point(324, 208);
             this.lblError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(50, 24);
@@ -187,7 +187,7 @@ namespace Library_management
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Myanmar Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label5.Location = new System.Drawing.Point(77, 15);
+            this.label5.Location = new System.Drawing.Point(27, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(445, 48);
             this.label5.TabIndex = 12;
@@ -198,7 +198,7 @@ namespace Library_management
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.ClientSize = new System.Drawing.Size(578, 359);
+            this.ClientSize = new System.Drawing.Size(498, 359);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnStaff);
