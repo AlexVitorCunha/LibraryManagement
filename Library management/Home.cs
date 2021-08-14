@@ -85,7 +85,7 @@ namespace Library_management
                         adapt = new SqlDataAdapter($"select * from books where genre like '%" + txtSearch.Text + "%'", con);
                         break;
                     case "Year":
-                        adapt = new SqlDataAdapter($"select * from books where =" + txtSearch.Text, con);
+                        adapt = new SqlDataAdapter($"select * from books where year =" + txtSearch.Text, con);
                         break;
                     default:
                         adapt = new SqlDataAdapter($"select * from books where book_name like '%" + txtSearch.Text + "%'", con);
@@ -120,17 +120,75 @@ namespace Library_management
 
         private void btnImport_Click(object sender, EventArgs e)
         {
+           
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                openFileDialog1.ShowDialog();
+                txtImport.Text = openFileDialog1.FileName;
+                string filePath = txtImport.Text;
+                DataTable dt = new DataTable();
+                string[] lines = System.IO.File.ReadAllLines(filePath);
+                if (lines.Length > 0)
+                {
+                    //first line to create header
+                    string firstLine = lines[0];
+                    string[] headerLabels = firstLine.Split(',');
+                    foreach (string headerWord in headerLabels)
+                    {
+                        dt.Columns.Add(new DataColumn(headerWord));
+                    }
+                    //For Data
+                    for (int i = 1; i < lines.Length; i++)
+                    {
+                        string[] dataWords = lines[i].Split(',');
+                        DataRow dr = dt.NewRow();
+                        int columnIndex = 0;
+                        foreach (string headerWord in headerLabels)
+                        {
+                            dr[headerWord] = dataWords[columnIndex++];
+                        }
+                        dt.Rows.Add(dr);
+                    }
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    bookList.DataSource = dt;
+                }
 
         }
 
-        private void btnImport_Click_1(object sender, EventArgs e)
+        private void btnExport_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void bookList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            // creating Excel Application  
+            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            // creating new WorkBook within Excel application  
+            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+            // creating new Excelsheet in workbook  
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+            // see the excel sheet behind the program  
+            app.Visible = true;
+            // get the reference of first sheet. By default its name is Sheet1.  
+            // store its reference to worksheet  
+            worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.Sheets["Sheet1"];
+            worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.ActiveSheet;
+            // changing the name of active sheet  
+            worksheet.Name = "Exported from gridview";
+            // storing header part in Excel  
+            for (int i = 1; i < bookList.Columns.Count + 1; i++)
+            {
+                worksheet.Cells[1, i] = bookList.Columns[i - 1].HeaderText;
+            }
+            // storing Each row and column value to excel sheet  
+            for (int i = 0; i < bookList.Rows.Count - 1; i++)
+            {
+                for (int j = 0; j < bookList.Columns.Count; j++)
+                {
+                    worksheet.Cells[i + 2, j + 1] = bookList.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+            // save the application  
+            workbook.SaveAs(@"C:\Users\bibek\Desktop\emp_details.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            // Exit from the application  
+            app.Quit();
         }
     }
 }
