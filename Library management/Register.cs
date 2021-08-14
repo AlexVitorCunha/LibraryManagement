@@ -68,7 +68,7 @@ namespace Library_management
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            //Accidentally double clicked on label
         }
     }
 }
