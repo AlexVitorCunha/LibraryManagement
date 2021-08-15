@@ -206,7 +206,13 @@ namespace Library_management
 
         private void helpBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To access the book files, double click on the database entry on the leftmost column with the arrow.");
+            if (!staff)
+            {
+                MessageBox.Show("To access the book information to borrow, double click on the database entry, on the leftmost column with the arrow.");
+            }
+            else {
+            MessageBox.Show("To access the book information to edit and delete, double click on the database entry, on the leftmost column with the arrow.");
+            }
         }
     }
 }
