@@ -71,8 +71,11 @@ namespace Library_management
             SqlDataAdapter adapt;
             if (txtSearch.Text == "") {
                 MessageBox.Show("Please enter what you like to search.");
+                con.Close();
+                PopulateData();
             }
-            else {
+            else 
+            {
                 switch (keyword)
                 {
                     case "ISBN":
@@ -107,7 +110,6 @@ namespace Library_management
                     PopulateData();
                 }
             }
-            
         }
 
         private void Clear()
@@ -197,8 +199,14 @@ namespace Library_management
                     worksheet.Cells[i + 2, j + 1] = bookList.Rows[i].Cells[j].Value.ToString();
                 }
             }
-            // save the application  
-            workbook.SaveAs("book_details.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            try
+            {// save the application  
+                workbook.SaveAs("book_details.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Process canceled");
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)

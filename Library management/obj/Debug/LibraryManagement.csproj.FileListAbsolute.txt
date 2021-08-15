@@ -62,3 +62,4 @@ C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Libra
 C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Library management.exe
 C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Library management.pdb
 C:\Users\alexv\source\repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\Library_management.Account.resources
+C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Library_management.Account.resources
