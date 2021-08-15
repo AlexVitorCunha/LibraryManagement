@@ -46,6 +46,8 @@ namespace Library_management
             this.btnClear = new System.Windows.Forms.Button();
             this.helpBtn = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
+            this.funFactBox = new System.Windows.Forms.TextBox();
+            this.btnFunFact = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bookList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +57,7 @@ namespace Library_management
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnLogout.Location = new System.Drawing.Point(712, 9);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(67, 25);
             this.btnLogout.TabIndex = 0;
@@ -68,7 +70,7 @@ namespace Library_management
             this.bookList.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.bookList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bookList.Location = new System.Drawing.Point(23, 177);
-            this.bookList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookList.Margin = new System.Windows.Forms.Padding(2);
             this.bookList.Name = "bookList";
             this.bookList.RowHeadersWidth = 62;
             this.bookList.RowTemplate.Height = 28;
@@ -82,7 +84,7 @@ namespace Library_management
             this.txtSearch.BackColor = System.Drawing.Color.SkyBlue;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Location = new System.Drawing.Point(82, 149);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(229, 20);
             this.txtSearch.TabIndex = 2;
@@ -104,7 +106,7 @@ namespace Library_management
             this.btnAddBook.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAddBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBook.Location = new System.Drawing.Point(695, 144);
-            this.btnAddBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddBook.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(83, 27);
             this.btnAddBook.TabIndex = 5;
@@ -117,7 +119,7 @@ namespace Library_management
             this.btnSearch.BackColor = System.Drawing.Color.SkyBlue;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Location = new System.Drawing.Point(484, 144);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(80, 27);
             this.btnSearch.TabIndex = 6;
@@ -136,7 +138,7 @@ namespace Library_management
             "Genre",
             "Year"});
             this.searchType.Location = new System.Drawing.Point(356, 148);
-            this.searchType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchType.Margin = new System.Windows.Forms.Padding(2);
             this.searchType.Name = "searchType";
             this.searchType.Size = new System.Drawing.Size(116, 21);
             this.searchType.TabIndex = 7;
@@ -204,7 +206,7 @@ namespace Library_management
             // 
             this.txtImport.BackColor = System.Drawing.Color.SkyBlue;
             this.txtImport.Location = new System.Drawing.Point(244, 410);
-            this.txtImport.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtImport.Margin = new System.Windows.Forms.Padding(1);
             this.txtImport.Name = "txtImport";
             this.txtImport.Size = new System.Drawing.Size(349, 20);
             this.txtImport.TabIndex = 13;
@@ -214,7 +216,7 @@ namespace Library_management
             this.btnClear.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Location = new System.Drawing.Point(585, 144);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(50, 27);
             this.btnClear.TabIndex = 14;
@@ -228,7 +230,7 @@ namespace Library_management
             this.helpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.helpBtn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.helpBtn.Location = new System.Drawing.Point(661, 9);
-            this.helpBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.helpBtn.Margin = new System.Windows.Forms.Padding(2);
             this.helpBtn.Name = "helpBtn";
             this.helpBtn.Size = new System.Drawing.Size(45, 25);
             this.helpBtn.TabIndex = 15;
@@ -241,13 +243,32 @@ namespace Library_management
             this.btnAccount.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Location = new System.Drawing.Point(26, 91);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(178, 28);
             this.btnAccount.TabIndex = 16;
             this.btnAccount.Text = "My Account";
             this.btnAccount.UseVisualStyleBackColor = false;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            // 
+            // funFactBox
+            // 
+            this.funFactBox.Location = new System.Drawing.Point(381, 51);
+            this.funFactBox.Multiline = true;
+            this.funFactBox.Name = "funFactBox";
+            this.funFactBox.ReadOnly = true;
+            this.funFactBox.Size = new System.Drawing.Size(397, 79);
+            this.funFactBox.TabIndex = 17;
+            // 
+            // btnFunFact
+            // 
+            this.btnFunFact.Location = new System.Drawing.Point(286, 74);
+            this.btnFunFact.Name = "btnFunFact";
+            this.btnFunFact.Size = new System.Drawing.Size(89, 25);
+            this.btnFunFact.TabIndex = 18;
+            this.btnFunFact.Text = "Get Fun Fact";
+            this.btnFunFact.UseVisualStyleBackColor = true;
+            this.btnFunFact.Click += new System.EventHandler(this.btnFunFact_Click);
             // 
             // Home
             // 
@@ -256,6 +277,8 @@ namespace Library_management
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(790, 443);
+            this.Controls.Add(this.btnFunFact);
+            this.Controls.Add(this.funFactBox);
             this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.helpBtn);
             this.Controls.Add(this.btnClear);
@@ -274,7 +297,7 @@ namespace Library_management
             this.Controls.Add(this.btnLogout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
@@ -303,5 +326,7 @@ namespace Library_management
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button helpBtn;
         private System.Windows.Forms.Button btnAccount;
+        private System.Windows.Forms.TextBox funFactBox;
+        private System.Windows.Forms.Button btnFunFact;
     }
 }

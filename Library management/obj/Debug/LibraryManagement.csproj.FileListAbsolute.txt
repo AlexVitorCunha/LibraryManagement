@@ -63,4 +63,20 @@ C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Libra
 C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Library management.pdb
 C:\Users\alexv\source\repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\Library_management.Account.resources
 C:\Users\bibek\Source\Repos\LibraryManagement\Library management\obj\Debug\Library_management.Account.resources
-E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Debug\Library_management.Account.resources
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\bin\Debug\Library management.exe.config
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\bin\Debug\Library management.exe
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\bin\Debug\Library management.pdb
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\bin\Debug\System.Data.SqlClient.dll
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\bin\Debug\System.Data.SqlClient.xml
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\LibraryManagement.csproj.AssemblyReference.cache
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\Library_management.Account.resources
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\Library_management.Book.resources
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\Library_management.Home.resources
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\Library_management.Login.resources
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\Library_management.Properties.Resources.resources
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\Library_management.Register.resources
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\LibraryManagement.csproj.GenerateResource.cache
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\LibraryManagement.csproj.CoreCompileInputs.cache
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\LibraryManagement.csproj.CopyComplete
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\Library management.exe
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Debug\Library management.pdb

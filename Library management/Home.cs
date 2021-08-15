@@ -279,5 +279,13 @@ namespace Library_management
             Account account = new Account(staff, user_id, username);
             account.ShowDialog();
         }
+
+        private void btnFunFact_Click(object sender, EventArgs e)
+        {
+            funFactBox.Text = "";
+
+        }
+
+        
     }
 }
