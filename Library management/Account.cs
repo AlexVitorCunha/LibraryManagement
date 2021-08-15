@@ -71,9 +71,18 @@ namespace Library_management
             adapt.Fill(dt);
             if(dt.Rows.Count != 0)
             {
-                cmd = new SqlCommand("UPDATE credentials SET password=@newpassword where id=" + user_id, con);
-                cmd.Parameters.AddWithValue("@newpassword", txtNewPassword.Text);
-                cmd.ExecuteNonQuery();
+                if(txtNewPassword.Text != String.Empty)
+                {
+                    cmd = new SqlCommand("UPDATE credentials SET password=@newpassword where id=" + user_id, con);
+                    cmd.Parameters.AddWithValue("@newpassword", txtNewPassword.Text);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Your password was updated succefully");
+                }
+                else
+                {
+                    MessageBox.Show("New password cannot be blank");
+                }
+                
             }
             else
             {
@@ -83,7 +92,6 @@ namespace Library_management
             con.Close();
             txtOldPassword.Text = "";
             txtNewPassword.Text = "";
-            MessageBox.Show("Your password was updated succefully");
         }
 
         //Gets the selected entry from the table

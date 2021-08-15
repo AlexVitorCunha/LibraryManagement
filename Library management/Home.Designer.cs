@@ -202,7 +202,7 @@ namespace Library_management
             // 
             this.txtImport.BackColor = System.Drawing.Color.SkyBlue;
             this.txtImport.Location = new System.Drawing.Point(366, 634);
-            this.txtImport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtImport.Margin = new System.Windows.Forms.Padding(2);
             this.txtImport.Name = "txtImport";
             this.txtImport.Size = new System.Drawing.Size(522, 26);
             this.txtImport.TabIndex = 13;
@@ -234,12 +234,14 @@ namespace Library_management
             // 
             // btnAccount
             // 
+            this.btnAccount.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Location = new System.Drawing.Point(39, 132);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(237, 33);
             this.btnAccount.TabIndex = 16;
             this.btnAccount.Text = "My Account";
-            this.btnAccount.UseVisualStyleBackColor = true;
+            this.btnAccount.UseVisualStyleBackColor = false;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // Home
