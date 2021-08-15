@@ -209,7 +209,7 @@ namespace Library_management
                 cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("You show return this book by" + return_date);
+                MessageBox.Show("Please return this book by" + return_date);
                 this.Hide();
                 Home home = new Home(staff, user_id, username);
                 home.ShowDialog();
