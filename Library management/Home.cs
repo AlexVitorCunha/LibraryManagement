@@ -14,6 +14,7 @@ namespace Library_management
     public partial class Home : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=lpdatabase1.database.windows.net;Initial Catalog=Azurehost;User ID=adminlionel;Password=Lion.game7im3!;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlCommand cmd;
         bool staff;
         int user_id;
         string username;
@@ -49,60 +50,35 @@ namespace Library_management
         }
 
         //to add imported data into the database
-        void addData(DataTable dt)
+        private void addData(DataTable dt)
         {
-            SqlCommand cmd;
-            int rowCount = dt.Rows.Count;
-           
-            
-            try
+            foreach (DataRow row in dt.Rows)
             {
-                for (int i = 1; i < rowCount; i++)
+                try
                 {
-                    /*
-                    foreach (DataRow row in YourDataTable.Rows)
-                    {
-                        string name = row["name"].ToString();
-                        string description = row["description"].ToString();
-                        string icoFileName = row["iconFile"].ToString();
-                        string installScript = row["installScript"].ToString();
-                    }
-                    */
-                    DataRow row = dt.Rows[i];
-                    MessageBox.Show(row["isbn"].ToString());
-                    
-                    /*
-                    if (row != null)
-                    {
-                        Book book = new Book(staff, user_id, username, row);
-                        book.ShowDialog();
-
-                        /*
-                        cmd = new SqlCommand("insert into books(isbn, book_name, author_name, genre, year, quantity)" +
-                        " values(@isbn, @book_name, @author_name, @genre, @year, @quantity)", con);
-                        con.Open();
-                        cmd.Parameters.AddWithValue("@isbn", row.Cells[0].Value.ToString());
-                        cmd.Parameters.AddWithValue("@book_name", row.Cells[1].Value.ToString());
-                        cmd.Parameters.AddWithValue("@author_name", row.Cells[2].Value.ToString());
-                        cmd.Parameters.AddWithValue("@genre", row.Cells[3].Value.ToString());
-                        cmd.Parameters.AddWithValue("@year", row.Cells[4].Value.ToString());
-                        cmd.Parameters.AddWithValue("@quantity", row.Cells[5].Value.ToString());
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                    
-                    }*/
-
-                }
-                MessageBox.Show("Inserted Successfully");
-
+                    cmd = new SqlCommand("insert into books(isbn, book_name, author_name, genre, year, quantity, book_cover)" +
+                        " values(@isbn, @book_name, @author_name, @genre, @year, @quantity, @book_cover)", con);
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@isbn", row["isbn"].ToString());
+                    cmd.Parameters.AddWithValue("@book_name", row["book_name"].ToString());
+                    cmd.Parameters.AddWithValue("@author_name", row["author_name"].ToString());
+                    cmd.Parameters.AddWithValue("@genre", row["genre"].ToString());
+                    cmd.Parameters.AddWithValue("@year", int.Parse(row["year"].ToString()));
+                    cmd.Parameters.AddWithValue("@quantity", int.Parse(row["quantity"].ToString()));
+                    cmd.Parameters.AddWithValue("@book_cover", row["book_cover"].ToString());
+                    cmd.ExecuteNonQuery();
+                    con.Close();
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Data is not compactiable with the databse");
+                    MessageBox.Show("Book '" + row["book_name"].ToString() + "' already on the database");
                 }
-                    }
+                
+            }
+            PopulateData();
 
-                private void btnLogout_Click(object sender, EventArgs e)
+        }
+        private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
             Login login = new Login();
@@ -184,8 +160,8 @@ namespace Library_management
 
         private void btnImport_Click(object sender, EventArgs e)
         {  
-                OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                openFileDialog1.ShowDialog();
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.ShowDialog();
             try
             {
                 txtImport.Text = openFileDialog1.FileName;
@@ -221,7 +197,7 @@ namespace Library_management
                 }
 
                 //ask if they want to import the data?
-                 var selectedOption = MessageBox.Show("Do you like to import these data in your database?", "Please Select a button", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+               var selectedOption = MessageBox.Show("Do you like to import these data in your database?", "Please Select a button", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
  
                if (selectedOption == DialogResult.Yes)
  
@@ -239,7 +215,7 @@ namespace Library_management
                }
             }
             catch (Exception) { MessageBox.Show("Nothing Imported."); }
-
+            txtImport.Text = "";
         }
 
         private void btnExport_Click(object sender, EventArgs e)
