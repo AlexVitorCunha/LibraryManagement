@@ -90,7 +90,7 @@ namespace Library_management
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblSearch.Location = new System.Drawing.Point(23, 148);
+            this.lblSearch.Location = new System.Drawing.Point(23, 149);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(55, 18);
@@ -101,7 +101,7 @@ namespace Library_management
             // 
             this.btnClear.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Location = new System.Drawing.Point(597, 144);
+            this.btnClear.Location = new System.Drawing.Point(572, 144);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(50, 27);
@@ -126,7 +126,7 @@ namespace Library_management
             // 
             this.btnSearch.BackColor = System.Drawing.Color.SkyBlue;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(502, 144);
+            this.btnSearch.Location = new System.Drawing.Point(484, 144);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(80, 27);
@@ -145,7 +145,7 @@ namespace Library_management
             "Author",
             "Genre",
             "Year"});
-            this.searchType.Location = new System.Drawing.Point(369, 148);
+            this.searchType.Location = new System.Drawing.Point(356, 148);
             this.searchType.Margin = new System.Windows.Forms.Padding(2);
             this.searchType.Name = "searchType";
             this.searchType.Size = new System.Drawing.Size(116, 21);
@@ -193,7 +193,7 @@ namespace Library_management
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label2.Location = new System.Drawing.Point(332, 147);
+            this.label2.Location = new System.Drawing.Point(324, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 18);
             this.label2.TabIndex = 11;
