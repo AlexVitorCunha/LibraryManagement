@@ -155,7 +155,7 @@ namespace Library_management
                 cmd = new SqlCommand("UPDATE books SET quantity=@quantity where isbn=@isbn", con);
                 cmd.Parameters.AddWithValue("@quantity", int.Parse(txtQuantity.Text) - 1);
                 cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
-     
+                cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("You show return this book by" + return_date);
                 this.Hide();
