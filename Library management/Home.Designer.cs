@@ -41,10 +41,11 @@ namespace Library_management
             this.btnImport = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.txtImport = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.helpBtn = new System.Windows.Forms.Button();
+            this.btnAccount = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bookList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,10 +54,9 @@ namespace Library_management
             this.btnLogout.BackColor = System.Drawing.Color.LimeGreen;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLogout.Location = new System.Drawing.Point(712, 9);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogout.Location = new System.Drawing.Point(1068, 14);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(67, 25);
+            this.btnLogout.Size = new System.Drawing.Size(100, 38);
             this.btnLogout.TabIndex = 0;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -66,12 +66,11 @@ namespace Library_management
             // 
             this.bookList.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.bookList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bookList.Location = new System.Drawing.Point(23, 177);
-            this.bookList.Margin = new System.Windows.Forms.Padding(2);
+            this.bookList.Location = new System.Drawing.Point(34, 272);
             this.bookList.Name = "bookList";
             this.bookList.RowHeadersWidth = 62;
             this.bookList.RowTemplate.Height = 28;
-            this.bookList.Size = new System.Drawing.Size(756, 224);
+            this.bookList.Size = new System.Drawing.Size(1134, 345);
             this.bookList.TabIndex = 1;
             this.bookList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookList_CellContenDoubleClick);
             this.bookList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookList_CellContenDoubleClick);
@@ -80,10 +79,9 @@ namespace Library_management
             // 
             this.txtSearch.BackColor = System.Drawing.Color.SkyBlue;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Location = new System.Drawing.Point(82, 149);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearch.Location = new System.Drawing.Point(123, 229);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(229, 20);
+            this.txtSearch.Size = new System.Drawing.Size(342, 26);
             this.txtSearch.TabIndex = 2;
             // 
             // lblSearch
@@ -91,10 +89,9 @@ namespace Library_management
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblSearch.Location = new System.Drawing.Point(23, 149);
-            this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearch.Location = new System.Drawing.Point(34, 229);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(55, 18);
+            this.lblSearch.Size = new System.Drawing.Size(89, 29);
             this.lblSearch.TabIndex = 3;
             this.lblSearch.Text = "Search";
             // 
@@ -102,10 +99,9 @@ namespace Library_management
             // 
             this.btnAddBook.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAddBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddBook.Location = new System.Drawing.Point(695, 144);
-            this.btnAddBook.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddBook.Location = new System.Drawing.Point(1042, 222);
             this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.Size = new System.Drawing.Size(83, 27);
+            this.btnAddBook.Size = new System.Drawing.Size(124, 42);
             this.btnAddBook.TabIndex = 5;
             this.btnAddBook.Text = "Add book";
             this.btnAddBook.UseVisualStyleBackColor = false;
@@ -115,10 +111,9 @@ namespace Library_management
             // 
             this.btnSearch.BackColor = System.Drawing.Color.SkyBlue;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(484, 144);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Location = new System.Drawing.Point(726, 222);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(80, 27);
+            this.btnSearch.Size = new System.Drawing.Size(120, 42);
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -134,10 +129,9 @@ namespace Library_management
             "Author",
             "Genre",
             "Year"});
-            this.searchType.Location = new System.Drawing.Point(356, 148);
-            this.searchType.Margin = new System.Windows.Forms.Padding(2);
+            this.searchType.Location = new System.Drawing.Point(534, 228);
             this.searchType.Name = "searchType";
-            this.searchType.Size = new System.Drawing.Size(116, 21);
+            this.searchType.Size = new System.Drawing.Size(172, 28);
             this.searchType.TabIndex = 7;
             // 
             // label1
@@ -145,9 +139,10 @@ namespace Library_management
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar Text", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label1.Location = new System.Drawing.Point(15, 9);
+            this.label1.Location = new System.Drawing.Point(22, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 51);
+            this.label1.Size = new System.Drawing.Size(416, 78);
             this.label1.TabIndex = 8;
             this.label1.Text = "Library Dashboard";
             // 
@@ -156,9 +151,10 @@ namespace Library_management
             this.btnImport.BackColor = System.Drawing.Color.SlateGray;
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnImport.Location = new System.Drawing.Point(23, 408);
+            this.btnImport.Location = new System.Drawing.Point(34, 628);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(211, 23);
+            this.btnImport.Size = new System.Drawing.Size(316, 35);
             this.btnImport.TabIndex = 9;
             this.btnImport.Text = "Import Data";
             this.btnImport.UseVisualStyleBackColor = false;
@@ -169,9 +165,10 @@ namespace Library_management
             this.btnExport.BackColor = System.Drawing.Color.DarkGreen;
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExport.Location = new System.Drawing.Point(632, 406);
+            this.btnExport.Location = new System.Drawing.Point(948, 625);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(146, 23);
+            this.btnExport.Size = new System.Drawing.Size(219, 35);
             this.btnExport.TabIndex = 10;
             this.btnExport.Text = "Export to Excel";
             this.btnExport.UseVisualStyleBackColor = false;
@@ -182,40 +179,41 @@ namespace Library_management
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label2.Location = new System.Drawing.Point(324, 149);
+            this.label2.Location = new System.Drawing.Point(486, 229);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 18);
+            this.label2.Size = new System.Drawing.Size(40, 29);
             this.label2.TabIndex = 11;
             this.label2.Text = "By";
             // 
-            // label3
+            // lblWelcome
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label3.Location = new System.Drawing.Point(21, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 25);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Welcome, User!";
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblWelcome.Location = new System.Drawing.Point(32, 92);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(244, 37);
+            this.lblWelcome.TabIndex = 12;
+            this.lblWelcome.Text = "Welcome, User!";
             // 
             // txtImport
             // 
             this.txtImport.BackColor = System.Drawing.Color.SkyBlue;
-            this.txtImport.Location = new System.Drawing.Point(244, 412);
-            this.txtImport.Margin = new System.Windows.Forms.Padding(1);
+            this.txtImport.Location = new System.Drawing.Point(366, 634);
+            this.txtImport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtImport.Name = "txtImport";
-            this.txtImport.Size = new System.Drawing.Size(349, 20);
+            this.txtImport.Size = new System.Drawing.Size(522, 26);
             this.txtImport.TabIndex = 13;
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Location = new System.Drawing.Point(585, 144);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClear.Location = new System.Drawing.Point(878, 222);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(50, 27);
+            this.btnClear.Size = new System.Drawing.Size(75, 42);
             this.btnClear.TabIndex = 14;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -226,26 +224,36 @@ namespace Library_management
             this.helpBtn.BackColor = System.Drawing.Color.LimeGreen;
             this.helpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.helpBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.helpBtn.Location = new System.Drawing.Point(651, 9);
-            this.helpBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.helpBtn.Location = new System.Drawing.Point(976, 14);
             this.helpBtn.Name = "helpBtn";
-            this.helpBtn.Size = new System.Drawing.Size(45, 25);
+            this.helpBtn.Size = new System.Drawing.Size(68, 38);
             this.helpBtn.TabIndex = 15;
             this.helpBtn.Text = "Help";
             this.helpBtn.UseVisualStyleBackColor = false;
             this.helpBtn.Click += new System.EventHandler(this.helpBtn_Click);
             // 
+            // btnAccount
+            // 
+            this.btnAccount.Location = new System.Drawing.Point(39, 132);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(237, 33);
+            this.btnAccount.TabIndex = 16;
+            this.btnAccount.Text = "My Account";
+            this.btnAccount.UseVisualStyleBackColor = true;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(790, 443);
+            this.ClientSize = new System.Drawing.Size(1185, 682);
+            this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.helpBtn);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtImport);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnImport);
@@ -259,7 +267,6 @@ namespace Library_management
             this.Controls.Add(this.btnLogout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
@@ -283,9 +290,10 @@ namespace Library_management
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.TextBox txtImport;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button helpBtn;
+        private System.Windows.Forms.Button btnAccount;
     }
 }

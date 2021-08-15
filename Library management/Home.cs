@@ -214,5 +214,12 @@ namespace Library_management
             MessageBox.Show("To access the book information to edit and delete, double click on the database entry, on the leftmost column with the arrow.");
             }
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Account account = new Account(staff, user_id);
+            account.ShowDialog();
+        }
     }
 }

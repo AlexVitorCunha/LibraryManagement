@@ -105,15 +105,23 @@ namespace Library_management
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
-                cmd = new SqlCommand("delete from books WHERE isbn=@isbn", con);
-                con.Open();
-                cmd.Parameters.AddWithValue("@isbn", book_id);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Deleted Successfully");
-                this.Hide();
-                Home home = new Home(staff, user_id);
-                home.ShowDialog();
+                try
+                {
+                    cmd = new SqlCommand("delete from books WHERE isbn=@isbn", con);
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@isbn", book_id);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Deleted Successfully");
+                    this.Hide();
+                    Home home = new Home(staff, user_id);
+                    home.ShowDialog();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Cannot delete a book that is currently borrowed");
+                }
+                
             }
         }
 
@@ -166,9 +174,7 @@ namespace Library_management
         }
 
         private void btnReturnBook_Click(object sender, EventArgs e)
-        {
-            cmd = new SqlCommand("insert into books_borrowed(return_date, isbn, id)" +
-                    " values(@return_date, @isbn, @id)", con);
+        { 
             con.Open();
             cmd = new SqlCommand("UPDATE books SET quantity=@quantity where isbn=@isbn", con);
             cmd.Parameters.AddWithValue("@quantity", int.Parse(txtQuantity.Text) + 1);
