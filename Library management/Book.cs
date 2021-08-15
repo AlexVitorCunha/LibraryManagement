@@ -154,8 +154,8 @@ namespace Library_management
             }
             else
             {
-                cmd = new SqlCommand("insert into books_borrowed(return_date, isbn, id)" +
-                    " values(@return_date, @isbn, @id)", con);
+                cmd = new SqlCommand("insert into books_borrowed(return_date, isbn, id, book_cover)" +
+                    " values(@return_date, @isbn, @id, @book_cover)", con);
                 con.Open();
                 DateTime return_date = DateTime.Today.AddDays(7);
                 cmd.Parameters.AddWithValue("@return_date", return_date);
@@ -174,5 +174,37 @@ namespace Library_management
             }
         }
 
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            //To where your opendialog box get starting location. My initial directory location is desktop.
+            openFileDialog1.InitialDirectory = "C://Desktop";
+            //Your opendialog box title name.
+            openFileDialog1.Title = "Select image to be upload.";
+            //which type image format you want to upload in database. just add them.
+            openFileDialog1.Filter = "Image Only(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";
+            //FilterIndex property represents the index of the filter currently selected in the file dialog box.
+            openFileDialog1.FilterIndex = 1;
+            try
+            {
+                if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    if (openFileDialog1.CheckFileExists)
+                    {
+                        string path = System.IO.Path.GetFullPath(openFileDialog1.FileName);
+                        bookCover.Image = new Bitmap(openFileDialog1.FileName);
+                        bookCover.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please Upload image.");
+                }
+            }
+            catch (Exception ex)
+            {
+                //it will give if file is already exits..
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

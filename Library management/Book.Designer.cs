@@ -50,13 +50,14 @@ namespace Library_management
             this.Quantity = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.btnBorrow = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bookCover)).BeginInit();
             this.SuspendLayout();
             // 
             // bookCover
             // 
             this.bookCover.Image = global::Library_management.Properties.Resources.Killing_Patient_Zero;
-            this.bookCover.Location = new System.Drawing.Point(498, 97);
+            this.bookCover.Location = new System.Drawing.Point(498, 77);
             this.bookCover.Name = "bookCover";
             this.bookCover.Size = new System.Drawing.Size(256, 342);
             this.bookCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -252,12 +253,26 @@ namespace Library_management
             this.btnBorrow.UseVisualStyleBackColor = false;
             this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
             // 
+            // btnImport
+            // 
+            this.btnImport.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.ForeColor = System.Drawing.Color.Black;
+            this.btnImport.Location = new System.Drawing.Point(542, 425);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(165, 38);
+            this.btnImport.TabIndex = 20;
+            this.btnImport.Text = "Upload book cover";
+            this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
             // Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(783, 526);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnBorrow);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.Quantity);
@@ -310,5 +325,6 @@ namespace Library_management
         private System.Windows.Forms.Label Quantity;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Button btnBorrow;
+        private System.Windows.Forms.Button btnImport;
     }
 }
