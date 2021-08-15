@@ -1,0 +1,16 @@
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\bin\Release\Library management.exe.config
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\bin\Release\Library management.exe
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\bin\Release\Library management.pdb
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\bin\Release\System.Data.SqlClient.dll
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\bin\Release\System.Data.SqlClient.xml
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\LibraryManagement.csproj.AssemblyReference.cache
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\Library_management.Book.resources
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\Library_management.Home.resources
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\Library_management.Login.resources
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\Library_management.Properties.Resources.resources
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\Library_management.Register.resources
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\LibraryManagement.csproj.GenerateResource.cache
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\LibraryManagement.csproj.CoreCompileInputs.cache
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\LibraryManagement.csproj.CopyComplete
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\Library management.exe
+E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\Library management.pdb

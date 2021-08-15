@@ -34,7 +34,7 @@ namespace Library_management
             this.bookList = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.clear = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnAddBook = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.searchType = new System.Windows.Forms.ComboBox();
@@ -97,17 +97,17 @@ namespace Library_management
             this.lblSearch.TabIndex = 3;
             this.lblSearch.Text = "Search";
             // 
-            // clear
+            // btnClear
             // 
-            this.clear.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clear.Location = new System.Drawing.Point(597, 144);
-            this.clear.Margin = new System.Windows.Forms.Padding(2);
-            this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(50, 27);
-            this.clear.TabIndex = 4;
-            this.clear.Text = "Clear";
-            this.clear.UseVisualStyleBackColor = false;
+            this.btnClear.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Location = new System.Drawing.Point(597, 144);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(50, 27);
+            this.btnClear.TabIndex = 4;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
             // btnAddBook
             // 
@@ -235,7 +235,7 @@ namespace Library_management
             this.Controls.Add(this.searchType);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnAddBook);
-            this.Controls.Add(this.clear);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.bookList);
@@ -244,6 +244,7 @@ namespace Library_management
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bookList)).EndInit();
@@ -258,7 +259,7 @@ namespace Library_management
         private System.Windows.Forms.DataGridView bookList;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.Button clear;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAddBook;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox searchType;

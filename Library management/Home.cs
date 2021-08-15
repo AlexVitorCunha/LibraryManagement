@@ -106,6 +106,10 @@ namespace Library_management
             }
             
         }
+        private void btnClear_Click(object sender, EventArgs e) 
+        {
+            txtSearch.Clear();
+        }
 
         private void bookList_CellContenDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
