@@ -66,6 +66,9 @@ namespace Library_management
             con.Close();
         }
 
-        
+        private void label2_Click(object sender, EventArgs e)
+        {
+            //Accidentally double clicked on label
+        }
     }
 }

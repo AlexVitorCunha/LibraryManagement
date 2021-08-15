@@ -15,7 +15,6 @@ namespace Library_management
     public partial class Login : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=lpdatabase1.database.windows.net;Initial Catalog=Azurehost;User ID=adminlionel;Password=Lion.game7im3!;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        SqlCommand cmd;
         public Login()
         {
             InitializeComponent();
@@ -60,7 +59,7 @@ namespace Library_management
                 }
                 else
                 {
-                    MessageBox.Show("Not set");
+                    MessageBox.Show("User not found.");
                 }
                 con.Close();
             }
