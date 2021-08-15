@@ -29,6 +29,7 @@ namespace Library_management
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Book));
             this.bookCover = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
@@ -55,10 +56,10 @@ namespace Library_management
             // bookCover
             // 
             this.bookCover.Image = global::Library_management.Properties.Resources.Killing_Patient_Zero;
-            this.bookCover.Location = new System.Drawing.Point(316, 63);
+            this.bookCover.Location = new System.Drawing.Point(332, 63);
             this.bookCover.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bookCover.Name = "bookCover";
-            this.bookCover.Size = new System.Drawing.Size(187, 222);
+            this.bookCover.Size = new System.Drawing.Size(171, 222);
             this.bookCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bookCover.TabIndex = 1;
             this.bookCover.TabStop = false;
@@ -296,6 +297,7 @@ namespace Library_management
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bookCover);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Book";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

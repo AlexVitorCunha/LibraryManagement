@@ -29,6 +29,7 @@ namespace Library_management
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
@@ -148,7 +149,7 @@ namespace Library_management
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label4.Location = new System.Drawing.Point(168, 288);
+            this.label4.Location = new System.Drawing.Point(168, 285);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(176, 18);
@@ -158,12 +159,12 @@ namespace Library_management
             // btnStaff
             // 
             this.btnStaff.AutoSize = true;
-            this.btnStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.btnStaff.Location = new System.Drawing.Point(159, 208);
             this.btnStaff.Margin = new System.Windows.Forms.Padding(2);
             this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Size = new System.Drawing.Size(62, 24);
+            this.btnStaff.Size = new System.Drawing.Size(56, 22);
             this.btnStaff.TabIndex = 10;
             this.btnStaff.TabStop = true;
             this.btnStaff.Text = "Staff";
@@ -187,11 +188,11 @@ namespace Library_management
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Myanmar Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label5.Location = new System.Drawing.Point(27, 21);
+            this.label5.Location = new System.Drawing.Point(61, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(445, 48);
+            this.label5.Size = new System.Drawing.Size(395, 48);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Please Register Your Information";
+            this.label5.Text = "Please Register Your Account";
             // 
             // Register
             // 
@@ -212,6 +213,7 @@ namespace Library_management
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

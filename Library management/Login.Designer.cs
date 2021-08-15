@@ -29,6 +29,7 @@ namespace Library_management
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -116,7 +117,7 @@ namespace Library_management
             // 
             this.btnVisible.AutoSize = true;
             this.btnVisible.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.btnVisible.Location = new System.Drawing.Point(354, 197);
+            this.btnVisible.Location = new System.Drawing.Point(354, 199);
             this.btnVisible.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVisible.Name = "btnVisible";
             this.btnVisible.Size = new System.Drawing.Size(55, 17);
@@ -150,11 +151,11 @@ namespace Library_management
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label5.Location = new System.Drawing.Point(147, 278);
+            this.label5.Location = new System.Drawing.Point(130, 276);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(222, 16);
+            this.label5.Size = new System.Drawing.Size(248, 18);
             this.label5.TabIndex = 9;
             this.label5.Text = "Are you new? Create a new account!";
             // 
@@ -175,6 +176,7 @@ namespace Library_management
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
