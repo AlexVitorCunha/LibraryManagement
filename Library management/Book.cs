@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Library_management
 {
@@ -55,9 +56,13 @@ namespace Library_management
                 txtYear.Text = row.Cells[4].Value.ToString();
                 txtQuantity.Text = row.Cells[5].Value.ToString();
                 book_id = int.Parse(row.Cells[0].Value.ToString());
+                try
+                {
+                   Bitmap image = new Bitmap("..\\.." + row.Cells[6].Value.ToString());
+                   bookCover.Image = (Image) image;
+                }
+                catch (Exception) { }
                 
-                Bitmap image = new Bitmap("..\\.." + row.Cells[6].Value.ToString());
-                bookCover.Image = (Image) image;
             }
             else
             {
@@ -80,8 +85,17 @@ namespace Library_management
             {
 
                 string filename = System.IO.Path.GetFileName(openFileDialog1.FileName);
-                cmd = new SqlCommand("UPDATE books SET isbn=@isbn, book_name=@book_name, " +
-                    "author_name=@author_name, genre=@genre, year=@year, quantity=@quantity,book_cover='\\covers\\" + filename + "')  where isbn=@Oldisbn", con);
+                Console.WriteLine(filename);
+                if (filename.Equals("openFileDialog1"))
+                {
+                    cmd = new SqlCommand("UPDATE books SET isbn=@isbn, book_name=@book_name, " +
+                    "author_name=@author_name, genre=@genre, year=@year, quantity=@quantity where isbn=@Oldisbn", con);
+                }
+                else{
+                    cmd = new SqlCommand("UPDATE books SET isbn=@isbn, book_name=@book_name, " +
+                    "author_name=@author_name, genre=@genre, year=@year, quantity=@quantity,book_cover='\\covers\\" + filename + "' where isbn=@Oldisbn", con);
+                }
+                
                 con.Open();
                 cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
                 cmd.Parameters.AddWithValue("@book_name", txtName.Text);
@@ -90,8 +104,12 @@ namespace Library_management
                 cmd.Parameters.AddWithValue("@year", txtYear.Text);
                 cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
                 cmd.Parameters.AddWithValue("@Oldisbn", book_id);
-                string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                System.IO.File.Copy(openFileDialog1.FileName, path + "\\covers\\" + filename);
+                try 
+                { 
+                    string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                    System.IO.File.Copy(openFileDialog1.FileName, path + "\\covers\\" + filename);
+                }
+                catch (Exception) { }
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Record Updated Successfully");
@@ -137,8 +155,18 @@ namespace Library_management
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string filename = System.IO.Path.GetFileName(openFileDialog1.FileName);
-            cmd = new SqlCommand("insert into books(isbn, book_name, author_name, genre, year, quantity, book_cover)" +
+            if (filename.Equals("openFileDialog1"))
+            {
+                cmd = new SqlCommand("insert into books(isbn, book_name, author_name, genre, year, quantity)" +
+                    " values(@isbn, @book_name, @author_name, @genre, @year, @quantity)", con);
+            }
+            else
+            {
+                cmd = new SqlCommand("insert into books(isbn, book_name, author_name, genre, year, quantity, book_cover)" +
                     " values(@isbn, @book_name, @author_name, @genre, @year, @quantity,'\\covers\\" + filename + "')", con);
+                File.Delete(@"..\\.." + row.Cells[6].Value.ToString());
+            }
+                
             con.Open();
             cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
             cmd.Parameters.AddWithValue("@book_name", txtName.Text) ;
@@ -146,8 +174,12 @@ namespace Library_management
             cmd.Parameters.AddWithValue("@genre", txtGenre.Text);
             cmd.Parameters.AddWithValue("@year", txtYear.Text);
             cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
-            string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-            System.IO.File.Copy(openFileDialog1.FileName, path + "\\covers\\" + filename);
+            try
+            {
+                string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                System.IO.File.Copy(openFileDialog1.FileName, path + "\\covers\\" + filename);
+            }
+            catch{}
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Inserted Successfully");
