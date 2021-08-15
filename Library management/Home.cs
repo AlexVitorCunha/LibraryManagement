@@ -48,7 +48,61 @@ namespace Library_management
             con.Close();
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        //to add imported data into the database
+        void addData(DataTable dt)
+        {
+            SqlCommand cmd;
+            int rowCount = dt.Rows.Count;
+           
+            
+            try
+            {
+                for (int i = 1; i < rowCount; i++)
+                {
+                    /*
+                    foreach (DataRow row in YourDataTable.Rows)
+                    {
+                        string name = row["name"].ToString();
+                        string description = row["description"].ToString();
+                        string icoFileName = row["iconFile"].ToString();
+                        string installScript = row["installScript"].ToString();
+                    }
+                    */
+                    DataRow row = dt.Rows[i];
+                    MessageBox.Show(row["isbn"].ToString());
+                    
+                    /*
+                    if (row != null)
+                    {
+                        Book book = new Book(staff, user_id, username, row);
+                        book.ShowDialog();
+
+                        /*
+                        cmd = new SqlCommand("insert into books(isbn, book_name, author_name, genre, year, quantity)" +
+                        " values(@isbn, @book_name, @author_name, @genre, @year, @quantity)", con);
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@isbn", row.Cells[0].Value.ToString());
+                        cmd.Parameters.AddWithValue("@book_name", row.Cells[1].Value.ToString());
+                        cmd.Parameters.AddWithValue("@author_name", row.Cells[2].Value.ToString());
+                        cmd.Parameters.AddWithValue("@genre", row.Cells[3].Value.ToString());
+                        cmd.Parameters.AddWithValue("@year", row.Cells[4].Value.ToString());
+                        cmd.Parameters.AddWithValue("@quantity", row.Cells[5].Value.ToString());
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    
+                    }*/
+
+                }
+                MessageBox.Show("Inserted Successfully");
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Data is not compactiable with the databse");
+                }
+                    }
+
+                private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
             Login login = new Login();
@@ -165,6 +219,24 @@ namespace Library_management
                 {
                     bookList.DataSource = dt;
                 }
+
+                //ask if they want to import the data?
+                 var selectedOption = MessageBox.Show("Do you like to import these data in your database?", "Please Select a button", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+ 
+               if (selectedOption == DialogResult.Yes)
+ 
+                {
+                        addData(dt);
+ 
+                }
+ 
+               else if (selectedOption == DialogResult.No)
+ 
+               {
+ 
+                   MessageBox.Show("Data is not imported.");
+ 
+               }
             }
             catch (Exception) { MessageBox.Show("Nothing Imported."); }
 
