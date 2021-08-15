@@ -17,11 +17,16 @@ namespace Library_management
         SqlCommand cmd;
         bool staff;
         int user_id;
-        public Account(bool staff, int user_id)
+        int return_book;
+        int return_user;
+        string username;
+        public Account(bool staff, int user_id, string username)
         {
             InitializeComponent();
             this.staff = staff;
             this.user_id = user_id;
+            this.username = username;
+
         }
 
         private void Account_Load(object sender, EventArgs e)
@@ -37,10 +42,12 @@ namespace Library_management
             if (staff)
             {
                 adapt = new SqlDataAdapter("select * from books_borrowed", con);
+                lblBooks.Text = "All current borrowed books";
             }
             else
             {
                 adapt = new SqlDataAdapter("select * from books_borrowed where id=" + user_id, con);
+                lblBooks.Text = "Your current borrowed books";
             }
             
             adapt.Fill(dt);
@@ -51,7 +58,7 @@ namespace Library_management
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Home home = new Home(staff, user_id);
+            Home home = new Home(staff, user_id, username);
             home.ShowDialog();
         }
 
@@ -77,6 +84,33 @@ namespace Library_management
             txtOldPassword.Text = "";
             txtNewPassword.Text = "";
             MessageBox.Show("Your password was updated succefully");
+        }
+
+        //Gets the selected entry from the table
+        private void myBooks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (myBooks.SelectedRows.Count != 0) // make sure select atleast 1 row 
+            {
+                DataGridViewRow row = this.myBooks.Rows[e.RowIndex];
+                return_book = Convert.ToInt32(row.Cells[2].Value.ToString());
+                lblSelected.Text = "Selected book:" + return_book.ToString();
+                return_user = Convert.ToInt32(row.Cells[3].Value.ToString());
+            }
+        }
+
+        private void btnReturnBook_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            cmd = new SqlCommand("DELETE from books_borrowed WHERE isbn=@isbn AND id=@id", con);
+            cmd.Parameters.AddWithValue("@isbn", return_book);
+            cmd.Parameters.AddWithValue("@id", return_user);
+            cmd.ExecuteNonQuery();
+            cmd = new SqlCommand("UPDATE books SET quantity=quantity+1 where isbn=@isbn", con);
+            cmd.Parameters.AddWithValue("@isbn", return_book);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Thank you for returning the book.");
+            PopulateData();
         }
     }
 }

@@ -17,13 +17,15 @@ namespace Library_management
         SqlCommand cmd;
         bool staff;
         int user_id;
+        string username;
         int book_id;
         DataGridViewRow row;
-        public Book(bool staff, int user_id, DataGridViewRow row = null)
+        public Book(bool staff, int user_id, string username, DataGridViewRow row = null)
         {
             InitializeComponent();
             this.staff = staff;
             this.user_id = user_id;
+            this.username = username;
             this.row = row; 
             if (!staff)
             {
@@ -40,7 +42,6 @@ namespace Library_management
             else
             {
                 btnBorrow.Hide();
-                btnReturnBook.Hide();
             }
 
             if (row != null)
@@ -64,7 +65,7 @@ namespace Library_management
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Home login = new Home(staff,user_id);
+            Home login = new Home(staff,user_id, username);
             login.ShowDialog();
         }
 
@@ -88,7 +89,7 @@ namespace Library_management
                 con.Close();
                 MessageBox.Show("Record Updated Successfully");
                 this.Hide();
-                Home home = new Home(staff, user_id);
+                Home home = new Home(staff, user_id, username);
                 home.ShowDialog();
             }
             else
@@ -114,7 +115,7 @@ namespace Library_management
                     con.Close();
                     MessageBox.Show("Deleted Successfully");
                     this.Hide();
-                    Home home = new Home(staff, user_id);
+                    Home home = new Home(staff, user_id, username);
                     home.ShowDialog();
                 }
                 catch (Exception)
@@ -141,7 +142,7 @@ namespace Library_management
             con.Close();
             MessageBox.Show("Inserted Successfully");
             this.Hide();
-            Home home = new Home(staff,user_id);
+            Home home = new Home(staff,user_id, username);
             home.ShowDialog();
         }
 
@@ -168,24 +169,10 @@ namespace Library_management
                 con.Close();
                 MessageBox.Show("You show return this book by" + return_date);
                 this.Hide();
-                Home home = new Home(staff, user_id);
+                Home home = new Home(staff, user_id, username);
                 home.ShowDialog();
             }
         }
 
-        private void btnReturnBook_Click(object sender, EventArgs e)
-        { 
-            con.Open();
-            cmd = new SqlCommand("UPDATE books SET quantity=@quantity where isbn=@isbn", con);
-            cmd.Parameters.AddWithValue("@quantity", int.Parse(txtQuantity.Text) + 1);
-            cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Thank you for returning the book.");
-            this.Hide();
-            Home home = new Home(staff, user_id);
-            home.ShowDialog();
-
-        }
     }
 }

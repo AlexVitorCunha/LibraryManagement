@@ -16,12 +16,15 @@ namespace Library_management
         SqlConnection con = new SqlConnection(@"Data Source=lpdatabase1.database.windows.net;Initial Catalog=Azurehost;User ID=adminlionel;Password=Lion.game7im3!;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         bool staff;
         int user_id;
-        public Home(bool staff, int user_id)
+        string username;
+        public Home(bool staff, int user_id, string username)
         {
             InitializeComponent();
             this.staff = staff;
             this.user_id = user_id;
+            this.username = username;
             searchType.SelectedItem = "Book Title";
+            lblWelcome.Text = "Welcome, " + username + "!";
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -55,7 +58,7 @@ namespace Library_management
         private void btnAddBook_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Book book = new Book(staff,user_id);
+            Book book = new Book(staff,user_id, username);
             book.ShowDialog();
         }
 
@@ -118,7 +121,7 @@ namespace Library_management
             {
                 DataGridViewRow row = this.bookList.Rows[e.RowIndex];
                 this.Hide();
-                Book book = new Book(staff, user_id, row);
+                Book book = new Book(staff, user_id, username, row);
                 book.ShowDialog();
             }
         }
@@ -218,7 +221,7 @@ namespace Library_management
         private void btnAccount_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Account account = new Account(staff, user_id);
+            Account account = new Account(staff, user_id, username);
             account.ShowDialog();
         }
     }

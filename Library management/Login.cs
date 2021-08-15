@@ -54,7 +54,7 @@ namespace Library_management
                     MessageBox.Show("Welcome " + (string)dt.Rows[0]["username"]);
                     con.Close();
                     this.Hide();
-                    Home home = new Home(Convert.ToBoolean(dt.Rows[0]["staff"]),Convert.ToInt32(dt.Rows[0]["id"]));
+                    Home home = new Home(Convert.ToBoolean(dt.Rows[0]["staff"]),Convert.ToInt32(dt.Rows[0]["id"]), (string)dt.Rows[0]["username"]);
                     home.ShowDialog();
                 }
                 else
