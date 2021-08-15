@@ -128,10 +128,13 @@ namespace Library_management
            
                 OpenFileDialog openFileDialog1 = new OpenFileDialog();
                 openFileDialog1.ShowDialog();
+            try
+            {
                 txtImport.Text = openFileDialog1.FileName;
                 string filePath = txtImport.Text;
                 DataTable dt = new DataTable();
                 string[] lines = System.IO.File.ReadAllLines(filePath);
+            
                 if (lines.Length > 0)
                 {
                     //first line to create header
@@ -158,6 +161,8 @@ namespace Library_management
                 {
                     bookList.DataSource = dt;
                 }
+            }
+            catch (Exception) { MessageBox.Show("Nothing Imported."); }
 
         }
 
