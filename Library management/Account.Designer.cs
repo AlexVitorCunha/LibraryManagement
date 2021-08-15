@@ -49,9 +49,10 @@ namespace Library_management
             this.btnReturn.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnReturn.Location = new System.Drawing.Point(12, 12);
+            this.btnReturn.Location = new System.Drawing.Point(8, 8);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(116, 44);
+            this.btnReturn.Size = new System.Drawing.Size(77, 29);
             this.btnReturn.TabIndex = 0;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = false;
@@ -61,11 +62,12 @@ namespace Library_management
             // 
             this.myBooks.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.myBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.myBooks.Location = new System.Drawing.Point(12, 249);
+            this.myBooks.Location = new System.Drawing.Point(8, 162);
+            this.myBooks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.myBooks.Name = "myBooks";
             this.myBooks.RowHeadersWidth = 62;
             this.myBooks.RowTemplate.Height = 28;
-            this.myBooks.Size = new System.Drawing.Size(765, 150);
+            this.myBooks.Size = new System.Drawing.Size(510, 97);
             this.myBooks.TabIndex = 1;
             this.myBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.myBooks_CellContentClick);
             this.myBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.myBooks_CellContentClick);
@@ -76,9 +78,10 @@ namespace Library_management
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label1.Location = new System.Drawing.Point(181, 80);
+            this.label1.Location = new System.Drawing.Point(121, 52);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 26);
+            this.label1.Size = new System.Drawing.Size(106, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Old Password:";
             // 
@@ -87,37 +90,41 @@ namespace Library_management
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label2.Location = new System.Drawing.Point(171, 122);
+            this.label2.Location = new System.Drawing.Point(114, 79);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 26);
+            this.label2.Size = new System.Drawing.Size(113, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "New Password:";
             // 
             // txtOldPassword
             // 
             this.txtOldPassword.BackColor = System.Drawing.Color.LightBlue;
-            this.txtOldPassword.Location = new System.Drawing.Point(341, 80);
+            this.txtOldPassword.Location = new System.Drawing.Point(227, 52);
+            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.PasswordChar = '*';
-            this.txtOldPassword.Size = new System.Drawing.Size(380, 26);
+            this.txtOldPassword.Size = new System.Drawing.Size(255, 20);
             this.txtOldPassword.TabIndex = 4;
             // 
             // txtNewPassword
             // 
             this.txtNewPassword.BackColor = System.Drawing.Color.LightBlue;
-            this.txtNewPassword.Location = new System.Drawing.Point(341, 124);
+            this.txtNewPassword.Location = new System.Drawing.Point(227, 81);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.Size = new System.Drawing.Size(380, 26);
+            this.txtNewPassword.Size = new System.Drawing.Size(255, 20);
             this.txtNewPassword.TabIndex = 5;
             // 
             // btnChange
             // 
             this.btnChange.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChange.Location = new System.Drawing.Point(508, 160);
+            this.btnChange.Location = new System.Drawing.Point(339, 104);
+            this.btnChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(213, 37);
+            this.btnChange.Size = new System.Drawing.Size(142, 24);
             this.btnChange.TabIndex = 6;
             this.btnChange.Text = "Change password";
             this.btnChange.UseVisualStyleBackColor = false;
@@ -125,11 +132,12 @@ namespace Library_management
             // 
             // btnReturnBook
             // 
-            this.btnReturnBook.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnReturnBook.BackColor = System.Drawing.Color.LimeGreen;
             this.btnReturnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturnBook.Location = new System.Drawing.Point(620, 405);
+            this.btnReturnBook.Location = new System.Drawing.Point(413, 263);
+            this.btnReturnBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReturnBook.Name = "btnReturnBook";
-            this.btnReturnBook.Size = new System.Drawing.Size(157, 41);
+            this.btnReturnBook.Size = new System.Drawing.Size(105, 27);
             this.btnReturnBook.TabIndex = 7;
             this.btnReturnBook.Text = "Return book";
             this.btnReturnBook.UseVisualStyleBackColor = false;
@@ -140,9 +148,10 @@ namespace Library_management
             this.lblBooks.AutoSize = true;
             this.lblBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBooks.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblBooks.Location = new System.Drawing.Point(248, 200);
+            this.lblBooks.Location = new System.Drawing.Point(165, 130);
+            this.lblBooks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBooks.Name = "lblBooks";
-            this.lblBooks.Size = new System.Drawing.Size(311, 46);
+            this.lblBooks.Size = new System.Drawing.Size(210, 31);
             this.lblBooks.TabIndex = 8;
             this.lblBooks.Text = "Borrowed books";
             // 
@@ -151,9 +160,10 @@ namespace Library_management
             this.lblSelected.AutoSize = true;
             this.lblSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelected.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblSelected.Location = new System.Drawing.Point(12, 410);
+            this.lblSelected.Location = new System.Drawing.Point(8, 266);
+            this.lblSelected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSelected.Name = "lblSelected";
-            this.lblSelected.Size = new System.Drawing.Size(156, 26);
+            this.lblSelected.Size = new System.Drawing.Size(107, 18);
             this.lblSelected.TabIndex = 9;
             this.lblSelected.Text = "Selected book:";
             // 
@@ -162,18 +172,19 @@ namespace Library_management
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label3.Location = new System.Drawing.Point(178, 21);
+            this.label3.Location = new System.Drawing.Point(119, 14);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(430, 46);
+            this.label3.Size = new System.Drawing.Size(293, 31);
             this.label3.TabIndex = 10;
             this.label3.Text = "Change your password";
             // 
             // Account
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.ClientSize = new System.Drawing.Size(800, 458);
+            this.ClientSize = new System.Drawing.Size(533, 298);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblSelected);
             this.Controls.Add(this.lblBooks);
@@ -186,7 +197,9 @@ namespace Library_management
             this.Controls.Add(this.myBooks);
             this.Controls.Add(this.btnReturn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Account";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Account";
             this.Load += new System.EventHandler(this.Account_Load);
             ((System.ComponentModel.ISupportInitialize)(this.myBooks)).EndInit();
