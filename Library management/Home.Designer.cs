@@ -218,7 +218,7 @@ namespace Library_management
             this.btnClear.TabIndex = 14;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Home
             // 
