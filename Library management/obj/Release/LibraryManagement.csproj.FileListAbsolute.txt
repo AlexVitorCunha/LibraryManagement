@@ -14,3 +14,19 @@ E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Re
 E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\LibraryManagement.csproj.CopyComplete
 E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\Library management.exe
 E:\Documents\Education\COMP 1098\Projects\FinalProject\Library management\obj\Release\Library management.pdb
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\bin\Release\Library management.exe.config
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\bin\Release\Library management.exe
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\bin\Release\Library management.pdb
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\bin\Release\System.Data.SqlClient.dll
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\bin\Release\System.Data.SqlClient.xml
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Release\LibraryManagement.csproj.AssemblyReference.cache
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Release\Library_management.Book.resources
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Release\Library_management.Home.resources
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Release\Library_management.Login.resources
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Release\Library_management.Properties.Resources.resources
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Release\Library_management.Register.resources
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Release\LibraryManagement.csproj.GenerateResource.cache
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Release\LibraryManagement.csproj.CoreCompileInputs.cache
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Release\LibraryManagement.csproj.CopyComplete
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Release\Library management.exe
+C:\Users\ludwi\Source\Repos\AlexVitorCunha\LibraryManagement\Library management\obj\Release\Library management.pdb
