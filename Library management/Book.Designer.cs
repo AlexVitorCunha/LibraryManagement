@@ -56,7 +56,9 @@ namespace Library_management
             // 
             // bookCover
             // 
-            this.bookCover.Image = global::Library_management.Properties.Resources.Killing_Patient_Zero;
+            this.bookCover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bookCover.ErrorImage = null;
+            this.bookCover.InitialImage = null;
             this.bookCover.Location = new System.Drawing.Point(498, 77);
             this.bookCover.Name = "bookCover";
             this.bookCover.Size = new System.Drawing.Size(256, 342);

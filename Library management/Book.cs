@@ -38,6 +38,7 @@ namespace Library_management
                 btnAdd.Hide();
                 btnUpdate.Hide();
                 btnDelete.Hide();
+                btnImport.Hide();
             }
             else
             {
@@ -54,6 +55,9 @@ namespace Library_management
                 txtYear.Text = row.Cells[4].Value.ToString();
                 txtQuantity.Text = row.Cells[5].Value.ToString();
                 book_id = int.Parse(row.Cells[0].Value.ToString());
+                
+                Bitmap image = new Bitmap("..\\.." + row.Cells[6].Value.ToString());
+                bookCover.Image = (Image) image;
             }
             else
             {
@@ -74,9 +78,10 @@ namespace Library_management
         {
             if (txtISBN.Text != "")
             {
-                
+
+                string filename = System.IO.Path.GetFileName(openFileDialog1.FileName);
                 cmd = new SqlCommand("UPDATE books SET isbn=@isbn, book_name=@book_name, " +
-                    "author_name=@author_name, genre=@genre, year=@year, quantity=@quantity  where isbn=@Oldisbn", con);
+                    "author_name=@author_name, genre=@genre, year=@year, quantity=@quantity,book_cover='\\covers\\" + filename + "')  where isbn=@Oldisbn", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
                 cmd.Parameters.AddWithValue("@book_name", txtName.Text);
@@ -85,6 +90,8 @@ namespace Library_management
                 cmd.Parameters.AddWithValue("@year", txtYear.Text);
                 cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
                 cmd.Parameters.AddWithValue("@Oldisbn", book_id);
+                string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                System.IO.File.Copy(openFileDialog1.FileName, path + "\\covers\\" + filename);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Record Updated Successfully");
@@ -129,8 +136,9 @@ namespace Library_management
         // ADD BOOK TO DATABASE
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            cmd = new SqlCommand("insert into books(isbn, book_name, author_name, genre, year, quantity)" +
-                    " values(@isbn, @book_name, @author_name, @genre, @year, @quantity)", con);
+            string filename = System.IO.Path.GetFileName(openFileDialog1.FileName);
+            cmd = new SqlCommand("insert into books(isbn, book_name, author_name, genre, year, quantity, book_cover)" +
+                    " values(@isbn, @book_name, @author_name, @genre, @year, @quantity,'\\covers\\" + filename + "')", con);
             con.Open();
             cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
             cmd.Parameters.AddWithValue("@book_name", txtName.Text) ;
@@ -138,6 +146,8 @@ namespace Library_management
             cmd.Parameters.AddWithValue("@genre", txtGenre.Text);
             cmd.Parameters.AddWithValue("@year", txtYear.Text);
             cmd.Parameters.AddWithValue("@quantity", txtQuantity.Text);
+            string path = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+            System.IO.File.Copy(openFileDialog1.FileName, path + "\\covers\\" + filename);
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Inserted Successfully");
@@ -154,8 +164,8 @@ namespace Library_management
             }
             else
             {
-                cmd = new SqlCommand("insert into books_borrowed(return_date, isbn, id, book_cover)" +
-                    " values(@return_date, @isbn, @id, @book_cover)", con);
+                cmd = new SqlCommand("insert into books_borrowed(return_date, isbn, id)" +
+                    " values(@return_date, @isbn, @id)", con);
                 con.Open();
                 DateTime return_date = DateTime.Today.AddDays(7);
                 cmd.Parameters.AddWithValue("@return_date", return_date);
@@ -197,7 +207,7 @@ namespace Library_management
                 }
                 else
                 {
-                    MessageBox.Show("Please Upload image.");
+                    MessageBox.Show("Please choose a valid file");
                 }
             }
             catch (Exception ex)
