@@ -44,6 +44,7 @@ namespace Library_management
             this.label3 = new System.Windows.Forms.Label();
             this.txtImport = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
+            this.helpBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bookList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -220,6 +221,20 @@ namespace Library_management
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // helpBtn
+            // 
+            this.helpBtn.BackColor = System.Drawing.Color.LimeGreen;
+            this.helpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helpBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.helpBtn.Location = new System.Drawing.Point(651, 9);
+            this.helpBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.helpBtn.Name = "helpBtn";
+            this.helpBtn.Size = new System.Drawing.Size(45, 25);
+            this.helpBtn.TabIndex = 15;
+            this.helpBtn.Text = "Help";
+            this.helpBtn.UseVisualStyleBackColor = false;
+            this.helpBtn.Click += new System.EventHandler(this.helpBtn_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +242,7 @@ namespace Library_management
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(790, 443);
+            this.Controls.Add(this.helpBtn);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtImport);
             this.Controls.Add(this.label3);
@@ -270,5 +286,6 @@ namespace Library_management
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtImport;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button helpBtn;
     }
 }

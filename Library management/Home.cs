@@ -203,5 +203,10 @@ namespace Library_management
         {
             Clear();
         }
+
+        private void helpBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To access the book files, double click on the database entry on the leftmost column with the arrow.");
+        }
     }
 }
