@@ -59,7 +59,7 @@ namespace Library_management
                 }
                 else
                 {
-                    MessageBox.Show("Not set");
+                    MessageBox.Show("User not found.");
                 }
                 con.Close();
             }

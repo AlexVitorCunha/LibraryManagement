@@ -106,9 +106,10 @@ namespace Library_management
             }
             
         }
-        private void btnClear_Click(object sender, EventArgs e)
+
+        private void Clear()
         {
-            //fix the clear
+            txtSearch.Text = "";
         }
 
         private void bookList_CellContenDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -191,6 +192,11 @@ namespace Library_management
             }
             // save the application  
             workbook.SaveAs("book_details.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }
