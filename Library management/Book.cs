@@ -40,6 +40,7 @@ namespace Library_management
             else
             {
                 btnBorrow.Hide();
+                btnReturnBook.Hide();
             }
 
             if (row != null)
@@ -162,6 +163,23 @@ namespace Library_management
                 Home home = new Home(staff, user_id);
                 home.ShowDialog();
             }
+        }
+
+        private void btnReturnBook_Click(object sender, EventArgs e)
+        {
+            cmd = new SqlCommand("insert into books_borrowed(return_date, isbn, id)" +
+                    " values(@return_date, @isbn, @id)", con);
+            con.Open();
+            cmd = new SqlCommand("UPDATE books SET quantity=@quantity where isbn=@isbn", con);
+            cmd.Parameters.AddWithValue("@quantity", int.Parse(txtQuantity.Text) + 1);
+            cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Thank you for returning the book.");
+            this.Hide();
+            Home home = new Home(staff, user_id);
+            home.ShowDialog();
+
         }
     }
 }

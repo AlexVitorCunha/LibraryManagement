@@ -50,6 +50,7 @@ namespace Library_management
             this.Quantity = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.btnBorrow = new System.Windows.Forms.Button();
+            this.btnReturnBook = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bookCover)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@ namespace Library_management
             // 
             this.bookCover.Image = global::Library_management.Properties.Resources.Killing_Patient_Zero;
             this.bookCover.Location = new System.Drawing.Point(332, 63);
-            this.bookCover.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookCover.Margin = new System.Windows.Forms.Padding(2);
             this.bookCover.Name = "bookCover";
             this.bookCover.Size = new System.Drawing.Size(171, 222);
             this.bookCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -81,7 +82,7 @@ namespace Library_management
             this.btnReturn.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.Location = new System.Drawing.Point(8, 8);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(109, 28);
             this.btnReturn.TabIndex = 3;
@@ -94,7 +95,7 @@ namespace Library_management
             this.btnUpdate.BackColor = System.Drawing.Color.LightGreen;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Location = new System.Drawing.Point(143, 263);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(91, 22);
             this.btnUpdate.TabIndex = 4;
@@ -107,7 +108,7 @@ namespace Library_management
             this.btnDelete.BackColor = System.Drawing.Color.Orange;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Location = new System.Drawing.Point(238, 263);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(57, 22);
             this.btnDelete.TabIndex = 5;
@@ -124,7 +125,7 @@ namespace Library_management
             this.btnAdd.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Location = new System.Drawing.Point(26, 263);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(113, 22);
             this.btnAdd.TabIndex = 6;
@@ -181,7 +182,7 @@ namespace Library_management
             this.txtISBN.BackColor = System.Drawing.Color.LightBlue;
             this.txtISBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtISBN.Location = new System.Drawing.Point(73, 63);
-            this.txtISBN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtISBN.Margin = new System.Windows.Forms.Padding(2);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(222, 20);
             this.txtISBN.TabIndex = 11;
@@ -191,7 +192,7 @@ namespace Library_management
             this.txtName.BackColor = System.Drawing.Color.LightBlue;
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Location = new System.Drawing.Point(73, 92);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(222, 20);
             this.txtName.TabIndex = 12;
@@ -201,7 +202,7 @@ namespace Library_management
             this.txtGenre.BackColor = System.Drawing.Color.LightBlue;
             this.txtGenre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtGenre.Location = new System.Drawing.Point(73, 159);
-            this.txtGenre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGenre.Margin = new System.Windows.Forms.Padding(2);
             this.txtGenre.Name = "txtGenre";
             this.txtGenre.Size = new System.Drawing.Size(222, 20);
             this.txtGenre.TabIndex = 13;
@@ -211,7 +212,7 @@ namespace Library_management
             this.txtYear.BackColor = System.Drawing.Color.LightBlue;
             this.txtYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtYear.Location = new System.Drawing.Point(73, 190);
-            this.txtYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtYear.Margin = new System.Windows.Forms.Padding(2);
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(222, 20);
             this.txtYear.TabIndex = 14;
@@ -221,7 +222,7 @@ namespace Library_management
             this.txtAuthor.BackColor = System.Drawing.Color.LightBlue;
             this.txtAuthor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAuthor.Location = new System.Drawing.Point(73, 125);
-            this.txtAuthor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAuthor.Margin = new System.Windows.Forms.Padding(2);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(222, 20);
             this.txtAuthor.TabIndex = 15;
@@ -253,7 +254,7 @@ namespace Library_management
             this.txtQuantity.BackColor = System.Drawing.Color.LightBlue;
             this.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQuantity.Location = new System.Drawing.Point(73, 221);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(222, 20);
             this.txtQuantity.TabIndex = 18;
@@ -263,7 +264,7 @@ namespace Library_management
             this.btnBorrow.BackColor = System.Drawing.Color.LimeGreen;
             this.btnBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrow.Location = new System.Drawing.Point(23, 305);
-            this.btnBorrow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBorrow.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(480, 27);
             this.btnBorrow.TabIndex = 19;
@@ -271,12 +272,26 @@ namespace Library_management
             this.btnBorrow.UseVisualStyleBackColor = false;
             this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
             // 
+            // btnReturnBook
+            // 
+            this.btnReturnBook.BackColor = System.Drawing.Color.IndianRed;
+            this.btnReturnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturnBook.Location = new System.Drawing.Point(21, 339);
+            this.btnReturnBook.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReturnBook.Name = "btnReturnBook";
+            this.btnReturnBook.Size = new System.Drawing.Size(480, 27);
+            this.btnReturnBook.TabIndex = 20;
+            this.btnReturnBook.Text = "Return this book";
+            this.btnReturnBook.UseVisualStyleBackColor = false;
+            this.btnReturnBook.Click += new System.EventHandler(this.btnReturnBook_Click);
+            // 
             // Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.ClientSize = new System.Drawing.Size(522, 355);
+            this.ClientSize = new System.Drawing.Size(522, 385);
+            this.Controls.Add(this.btnReturnBook);
             this.Controls.Add(this.btnBorrow);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.Quantity);
@@ -298,7 +313,7 @@ namespace Library_management
             this.Controls.Add(this.bookCover);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Book";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Book";
@@ -330,5 +345,6 @@ namespace Library_management
         private System.Windows.Forms.Label Quantity;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Button btnBorrow;
+        private System.Windows.Forms.Button btnReturnBook;
     }
 }
