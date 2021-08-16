@@ -71,7 +71,7 @@ namespace Library_management
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Book '" + row["book_name"].ToString() + "' already on the database");
+                    MessageBox.Show("Book '" + row["book_name"].ToString() + "' is already on the database");
                 }
                 
             }
@@ -100,7 +100,7 @@ namespace Library_management
             DataTable dt = new DataTable();
             SqlDataAdapter adapt;
             if (txtSearch.Text == "") {
-                MessageBox.Show("Please enter what you like to search.");
+                MessageBox.Show("Please enter what you would like to search.");
                 con.Close();
                 PopulateData();
             }
@@ -197,7 +197,7 @@ namespace Library_management
                 }
 
                 //ask if they want to import the data?
-               var selectedOption = MessageBox.Show("Do you like to import these data in your database?", "Please Select a button", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+               var selectedOption = MessageBox.Show("Would you like to import this data into the database?", "Please Select a button", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
  
                if (selectedOption == DialogResult.Yes)
  

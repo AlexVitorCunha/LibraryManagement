@@ -80,13 +80,13 @@ namespace Library_management
                 }
                 else
                 {
-                    MessageBox.Show("New password cannot be blank");
+                    MessageBox.Show("New password cannot be blank.");
                 }
                 
             }
             else
             {
-                MessageBox.Show("Old password is wrong");
+                MessageBox.Show("Old password is incorrect.");
             }
             
             con.Close();
@@ -117,7 +117,7 @@ namespace Library_management
             cmd.Parameters.AddWithValue("@isbn", return_book);
             cmd.ExecuteNonQuery();
             con.Close();
-            MessageBox.Show("Thank you for returning the book.");
+            MessageBox.Show("Thank you for returning the selected book.");
             PopulateData();
         }
     }

@@ -138,14 +138,14 @@ namespace Library_management
                     cmd.Parameters.AddWithValue("@isbn", book_id);
                     cmd.ExecuteNonQuery();
                     con.Close();
-                    MessageBox.Show("Deleted Successfully");
+                    MessageBox.Show("Deleted Successfully!");
                     this.Hide();
                     Home home = new Home(staff, user_id, username);
                     home.ShowDialog();
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Cannot delete a book that is currently borrowed");
+                    MessageBox.Show("Cannot delete a book that is currently borrowed.");
                 }
                 
             }
@@ -182,7 +182,7 @@ namespace Library_management
             catch{}
             cmd.ExecuteNonQuery();
             con.Close();
-            MessageBox.Show("Inserted Successfully");
+            MessageBox.Show("Inserted Successfully!");
             this.Hide();
             Home home = new Home(staff,user_id, username);
             home.ShowDialog();
@@ -192,7 +192,7 @@ namespace Library_management
         {
             if(int.Parse(txtQuantity.Text) == 0)
             {
-                MessageBox.Show("No copies of this book available");
+                MessageBox.Show("No copies of this book available.");
             }
             else
             {
@@ -209,7 +209,7 @@ namespace Library_management
                 cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Please return this book by" + return_date);
+                MessageBox.Show("Please return this book by " + return_date);
                 this.Hide();
                 Home home = new Home(staff, user_id, username);
                 home.ShowDialog();
@@ -239,7 +239,7 @@ namespace Library_management
                 }
                 else
                 {
-                    MessageBox.Show("Please choose a valid file");
+                    MessageBox.Show("Please choose a valid file.");
                 }
             }
             catch (Exception ex)
