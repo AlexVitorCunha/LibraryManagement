@@ -164,7 +164,6 @@ namespace Library_management
             {
                 cmd = new SqlCommand("insert into books(isbn, book_name, author_name, genre, year, quantity, book_cover)" +
                     " values(@isbn, @book_name, @author_name, @genre, @year, @quantity,'\\covers\\" + filename + "')", con);
-                File.Delete(@"..\\.." + row.Cells[6].Value.ToString());
             }
                 
             con.Open();
