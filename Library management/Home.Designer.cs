@@ -46,8 +46,6 @@ namespace Library_management
             this.btnClear = new System.Windows.Forms.Button();
             this.helpBtn = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
-            this.funFactBox = new System.Windows.Forms.TextBox();
-            this.btnFunFact = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bookList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -251,25 +249,6 @@ namespace Library_management
             this.btnAccount.UseVisualStyleBackColor = false;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
-            // funFactBox
-            // 
-            this.funFactBox.Location = new System.Drawing.Point(381, 51);
-            this.funFactBox.Multiline = true;
-            this.funFactBox.Name = "funFactBox";
-            this.funFactBox.ReadOnly = true;
-            this.funFactBox.Size = new System.Drawing.Size(397, 79);
-            this.funFactBox.TabIndex = 17;
-            // 
-            // btnFunFact
-            // 
-            this.btnFunFact.Location = new System.Drawing.Point(286, 74);
-            this.btnFunFact.Name = "btnFunFact";
-            this.btnFunFact.Size = new System.Drawing.Size(89, 25);
-            this.btnFunFact.TabIndex = 18;
-            this.btnFunFact.Text = "Get Fun Fact";
-            this.btnFunFact.UseVisualStyleBackColor = true;
-            this.btnFunFact.Click += new System.EventHandler(this.btnFunFact_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,8 +256,6 @@ namespace Library_management
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(790, 443);
-            this.Controls.Add(this.btnFunFact);
-            this.Controls.Add(this.funFactBox);
             this.Controls.Add(this.btnAccount);
             this.Controls.Add(this.helpBtn);
             this.Controls.Add(this.btnClear);
@@ -326,7 +303,5 @@ namespace Library_management
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button helpBtn;
         private System.Windows.Forms.Button btnAccount;
-        private System.Windows.Forms.TextBox funFactBox;
-        private System.Windows.Forms.Button btnFunFact;
     }
 }
