@@ -13,7 +13,7 @@ namespace Library_management
 {
     public partial class Register : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=lpdatabase1.database.windows.net;Initial Catalog=Azurehost;User ID=adminlionel;Password=Lion.game7im3!;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection con = DatabaseConnection.getDatabaseconnection();
         SqlCommand cmd;
         public Register()
         {

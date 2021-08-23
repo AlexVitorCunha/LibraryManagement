@@ -13,24 +13,20 @@ namespace Library_management
 {
     public partial class Home : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=lpdatabase1.database.windows.net;Initial Catalog=Azurehost;User ID=adminlionel;Password=Lion.game7im3!;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection con = DatabaseConnection.getDatabaseconnection();
         SqlCommand cmd;
-        bool staff;
-        int user_id;
-        string username;
-        public Home(bool staff, int user_id, string username)
+        LoggedUser user;
+        public Home(LoggedUser user)
         {
             InitializeComponent();
-            this.staff = staff;
-            this.user_id = user_id;
-            this.username = username;
+            this.user = user;
             searchType.SelectedItem = "Book Title";
-            lblWelcome.Text = "Welcome, " + username + "!";
+            lblWelcome.Text = "Welcome, " + user.Username + "!";
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
-            if (!staff)
+            if (!user.Staff)
             {
                 btnAddBook.Hide();
             }
@@ -88,7 +84,7 @@ namespace Library_management
         private void btnAddBook_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Book book = new Book(staff,user_id, username);
+            Book book = new Book(user);
             book.ShowDialog();
         }
 
@@ -153,7 +149,7 @@ namespace Library_management
             {
                 DataGridViewRow row = this.bookList.Rows[e.RowIndex];
                 this.Hide();
-                Book book = new Book(staff, user_id, username, row);
+                Book book = new Book(user, row);
                 book.ShowDialog();
             }
         }
@@ -264,7 +260,7 @@ namespace Library_management
 
         private void helpBtn_Click(object sender, EventArgs e)
         {
-            if (!staff)
+            if (!user.Staff)
             {
                 MessageBox.Show("To access the book information to borrow, double click on the database entry, on the leftmost column with the arrow.");
             }
@@ -276,7 +272,7 @@ namespace Library_management
         private void btnAccount_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Account account = new Account(staff, user_id, username);
+            Account account = new Account(user);
             account.ShowDialog();
         }
         

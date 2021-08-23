@@ -13,19 +13,16 @@ namespace Library_management
 {
     public partial class Account : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=lpdatabase1.database.windows.net;Initial Catalog=Azurehost;User ID=adminlionel;Password=Lion.game7im3!;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection con = DatabaseConnection.getDatabaseconnection();
         SqlCommand cmd;
-        bool staff;
-        int user_id;
+        LoggedUser user;
         int return_book;
         int return_user;
-        string username;
-        public Account(bool staff, int user_id, string username)
+        
+        public Account(LoggedUser user)
         {
             InitializeComponent();
-            this.staff = staff;
-            this.user_id = user_id;
-            this.username = username;
+            this.user = user;
 
         }
 
@@ -39,14 +36,14 @@ namespace Library_management
             con.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter adapt;
-            if (staff)
+            if (user.Staff)
             {
                 adapt = new SqlDataAdapter("select * from books_borrowed", con);
                 lblBooks.Text = "All current borrowed books";
             }
             else
             {
-                adapt = new SqlDataAdapter("select * from books_borrowed where id=" + user_id, con);
+                adapt = new SqlDataAdapter("select * from books_borrowed where id=" + user.UserID, con);
                 lblBooks.Text = "Your current borrowed books";
             }
             
@@ -58,7 +55,7 @@ namespace Library_management
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Home home = new Home(staff, user_id, username);
+            Home home = new Home(user);
             home.ShowDialog();
         }
 
@@ -67,13 +64,13 @@ namespace Library_management
             con.Open();
             DataTable dt = new DataTable();
             SqlDataAdapter adapt;
-            adapt = new SqlDataAdapter("select * from credentials where id=" + user_id + " AND password='" + txtOldPassword.Text + "'", con);
+            adapt = new SqlDataAdapter("select * from credentials where id=" + user.UserID + " AND password='" + txtOldPassword.Text + "'", con);
             adapt.Fill(dt);
             if(dt.Rows.Count != 0)
             {
                 if(txtNewPassword.Text != String.Empty)
                 {
-                    cmd = new SqlCommand("UPDATE credentials SET password=@newpassword where id=" + user_id, con);
+                    cmd = new SqlCommand("UPDATE credentials SET password=@newpassword where id=" + user.UserID, con);
                     cmd.Parameters.AddWithValue("@newpassword", txtNewPassword.Text);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Your password was updated succefully");

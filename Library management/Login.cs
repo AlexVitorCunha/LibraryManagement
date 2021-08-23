@@ -14,7 +14,9 @@ namespace Library_management
 {
     public partial class Login : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=lpdatabase1.database.windows.net;Initial Catalog=Azurehost;User ID=adminlionel;Password=Lion.game7im3!;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+
+        SqlConnection con = DatabaseConnection.getDatabaseconnection();
         public Login()
         {
             InitializeComponent();
@@ -52,9 +54,13 @@ namespace Library_management
                 if (dt.Rows.Count != 0)
                 {
                     MessageBox.Show("Welcome " + (string)dt.Rows[0]["username"]);
+                    LoggedUser user = new LoggedUser();
+                    user.Staff = Convert.ToBoolean(dt.Rows[0]["staff"]);
+                    user.UserID = Convert.ToInt32(dt.Rows[0]["id"]);
+                    user.Username = (string)dt.Rows[0]["username"];
                     con.Close();
                     this.Hide();
-                    Home home = new Home(Convert.ToBoolean(dt.Rows[0]["staff"]),Convert.ToInt32(dt.Rows[0]["id"]), (string)dt.Rows[0]["username"]);
+                    Home home = new Home(user);
                     home.ShowDialog();
                 }
                 else

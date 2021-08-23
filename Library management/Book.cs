@@ -14,21 +14,17 @@ namespace Library_management
 {
     public partial class Book : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=lpdatabase1.database.windows.net;Initial Catalog=Azurehost;User ID=adminlionel;Password=Lion.game7im3!;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection con = DatabaseConnection.getDatabaseconnection();
         SqlCommand cmd;
-        bool staff;
-        int user_id;
-        string username;
-        int book_id;
+        LoggedUser user;
         DataGridViewRow row;
-        public Book(bool staff, int user_id, string username, DataGridViewRow row = null)
+        int book_id;
+        public Book(LoggedUser user, DataGridViewRow row = null)
         {
             InitializeComponent();
-            this.staff = staff;
-            this.user_id = user_id;
-            this.username = username;
+            this.user = user;
             this.row = row; 
-            if (!staff)
+            if (!user.Staff)
             {
                 txtISBN.ReadOnly = true;
                 txtName.ReadOnly = true;
@@ -74,7 +70,7 @@ namespace Library_management
         private void btnReturn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Home login = new Home(staff,user_id, username);
+            Home login = new Home(user);
             login.ShowDialog();
         }
 
@@ -114,7 +110,7 @@ namespace Library_management
                 con.Close();
                 MessageBox.Show("Record Updated Successfully");
                 this.Hide();
-                Home home = new Home(staff, user_id, username);
+                Home home = new Home(user);
                 home.ShowDialog();
             }
             else
@@ -140,7 +136,7 @@ namespace Library_management
                     con.Close();
                     MessageBox.Show("Deleted Successfully!");
                     this.Hide();
-                    Home home = new Home(staff, user_id, username);
+                    Home home = new Home(user);
                     home.ShowDialog();
                 }
                 catch (Exception)
@@ -183,7 +179,7 @@ namespace Library_management
             con.Close();
             MessageBox.Show("Inserted Successfully!");
             this.Hide();
-            Home home = new Home(staff,user_id, username);
+            Home home = new Home(user);
             home.ShowDialog();
         }
 
@@ -201,7 +197,7 @@ namespace Library_management
                 DateTime return_date = DateTime.Today.AddDays(7);
                 cmd.Parameters.AddWithValue("@return_date", return_date);
                 cmd.Parameters.AddWithValue("@isbn", txtISBN.Text);
-                cmd.Parameters.AddWithValue("@id", user_id);
+                cmd.Parameters.AddWithValue("@id", user.UserID);
                 cmd.ExecuteNonQuery();
                 cmd = new SqlCommand("UPDATE books SET quantity=@quantity where isbn=@isbn", con);
                 cmd.Parameters.AddWithValue("@quantity", int.Parse(txtQuantity.Text) - 1);
@@ -210,7 +206,7 @@ namespace Library_management
                 con.Close();
                 MessageBox.Show("Please return this book by " + return_date);
                 this.Hide();
-                Home home = new Home(staff, user_id, username);
+                Home home = new Home(user);
                 home.ShowDialog();
             }
         }
