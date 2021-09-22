@@ -21,7 +21,7 @@ book_cover [nvarchar](100) NULL
 );
 
 CREATE TABLE [books_borrowed](
-[order_number][char](5) PRIMARY KEY,
+[order_number][int] IDENTITY(1,1) PRIMARY KEY,
 [return_date][date],
 [isbn][int],
 [id][int],
